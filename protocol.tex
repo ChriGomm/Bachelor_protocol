@@ -33,6 +33,8 @@
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{hyperref}
+\usepackage{floatrow}
+\usepackage{subcaption}
 % \setmathfont{Asana Math}
 % \makeglossaries
 % \loadglsentries{glossary}
@@ -818,13 +820,13 @@ The roots of this exression are found at
     y_{12}=&\frac{1}{3}\,\left(  2\pm \sqrt{4-3\,(\Gamma A+1)}  \right)\\
     =&\frac{1}{3}\,\left(  2\pm \sqrt{1-3\,\Gamma A}  \right)
 \end{align*}
-Thus $F(y)$ has no extrema, if $\Gamma A\geq1/3$. Through the choice of the parameters $\sqrt{2}\,\Gamma/\kappa$ the position and existence of the roots can be controlled. But it has to be remembered that these parameters only can be positive. The effect of this is examined by resolving the above equation for $\Gamma A$, and inserting it into $F$.
+Thus $F(y)$ has no extrema, if $\Gamma A\geq1/3$. Through the choice of the parameters $\Gamma/\sqrt{2}\kappa$ the position and existence of the roots can be controlled. But it has to be remembered that these parameters only can be positive. The effect of this is examined by resolving the above equation for $\Gamma A$, and inserting it into $F$.
 \begin{align*}
     (3\,y_{12}-2)^2=&1-3\,\Gamma A\\
     \Gamma A=& \frac{1}{3}\,\left(  1-(3\,y_{12}-2)^2 \right)\\\\
-    \Rightarrow\quad F(y_{12})=&-\sqrt{2}\,\Gamma/\kappa-\frac{1}{3}\,\left(  1-(3\,y_{12}-2)^2 +3\right)\,y_{12}-y_{12}^3+2\,y_{12}^2\\
-    =&-\sqrt{2}\,\Gamma/\kappa-\frac{1}{3}\,\left( - 9\,y_{12}^2+12\,y_{12}\right)\,y_{12}-y_{12}^3+2\,y_{12}^2\\
-    =&-\sqrt{2}\,\Gamma/\kappa+2\,y_{12}^3-2\,y_{12}^2\\
+    \Rightarrow\quad F(y_{12})=&-\frac{\Gamma}{\sqrt{2}\,\kappa}-\frac{1}{3}\,\left(  1-(3\,y_{12}-2)^2 +3\right)\,y_{12}-y_{12}^3+2\,y_{12}^2\\
+    =&-\frac{\Gamma}{\sqrt{2}\,\kappa}-\frac{1}{3}\,\left( - 9\,y_{12}^2+12\,y_{12}\right)\,y_{12}-y_{12}^3+2\,y_{12}^2\\
+    =&-\frac{\Gamma}{\sqrt{2}\,\kappa}+2\,y_{12}^3-2\,y_{12}^2\\
 \end{align*}
 $F(y_{12})$ gives the position of the maximum and minimum of $F$. For $\Gamma/\kappa\rightarrow0$ there remains
 \begin{align*}
@@ -859,11 +861,11 @@ For $A<0$ the maximal value for $B$ is with the plus sign
 \end{align*}
 For a given value of $\Gamma A$ $B$ takes again its maximal value in the case $A<0$, if $\gamma$ is as small as possible, i.e. $\gamma=0$.
 \begin{wrapfigure}[18]{l}{0pt}
-    \includegraphics{k=w_F|B_numn_of_fixp.pdf}
+    \includegraphics{pictures/k=w_F|B_numn_of_fixp.pdf}
     \vspace*{-2cm}\caption{The cource of $F+B$ and $B$ as function of $\Gamma A$}
     \label{fig:k=w_numb_of_fixp}
 \end{wrapfigure}\\
-The minimal value of $B$ is taken again in the case $A<0$ for the minus sign and also again here for $\gamma=0$.\\
+The minimal value of $B$ is taken again in the case $A<0$ for the minus sign and also for $\gamma=0$.\\
 For $A<0$ we know that the maximum of $F(y)+B$ is positive, opening the possibility for more than one solution for $y\rightarrow m_y$. In order for this to happen the minimal value of $B$ has to be smaller than the value of the maximum of $F(y)+B$. Both values are determined by $\Gamma A$. Graphically we can see as depicted in \autoref{fig:k=w_numb_of_fixp} that $B$ is always larger than $F(y)$ by noticing, that $F(\Gamma A = 0)=0$, whereas $B(\Gamma A=0)=2$ and $F(\Gamma A = -1/2)\approx0.55$ where $B(\Gamma A= -1/2)=1$.\\
 Because $F(y=0)=-B\leq0$ and $F(y\rightarrow-\infty)\rightarrow\infty$, the root of $F(y)$ has to be smaller than $0$ and $0$ for $B=0$.\\\\
 
@@ -876,7 +878,7 @@ which has roots at
     y_{\pm}=\half\,(1\pm\sqrt{1-4\,\Gamma A})
 \end{align*}
 \begin{wrapfigure}[13]{l}{0pt}
-    \includegraphics{k=w_sign_of_ev1.pdf}
+    \includegraphics{pictures/k=w_sign_of_ev1.pdf}
     \vspace*{-2cm}\caption{The roots of $\lambda_1$ and the value for $m_y$ for a selection of $\Gamma A$-values.}
     \label{fig:k=w_numb_of_fixp}
 \end{wrapfigure}\\
@@ -925,10 +927,70 @@ In a next step we let be $\kappa\neq\omega$, while $\delta=0$ remains. Thus we a
     -m_x\,\left(\Gamma A+( m_x^2+ m_y^2)-\frac{\omega}{\kappa}\,m_y\right)  &=0\\\\
     -\frac{\omega\Gamma}{\sqrt{2}\,\kappa^2}-\Gamma A\,m_y    -m_ym_x^2- m_y^3+\frac{\omega}{\kappa}\,(m_x^2+2\,m_y^2)-\frac{\omega^2}{\kappa^2}\,m_y  &=0
 \end{align*}
+First I show, that also in this case there is no solution for $m_x\neq0$. There we would have
+\begin{align*}
+    m_x^2=&-m_y^2+\frac{\omega}{\kappa}\,m_y-\Gamma A \\
+    \Rightarrow\quad0=&-\frac{\omega\Gamma}{\sqrt{2}\,\kappa^2}-\Gamma A\,m_y    -m_y\,(-m_y^2+\frac{\omega}{\kappa}\,m_y-\Gamma A)- m_y^3+\frac{\omega}{\kappa}\,(-m_y^2+\frac{\omega}{\kappa}\,m_y-\Gamma A+2\,m_y^2)-\frac{\omega^2}{\kappa^2}\,m_y  \\
+    =&-\frac{\omega\Gamma}{\sqrt{2}\,\kappa^2}-\frac{\omega}{\kappa}\,\Gamma A\\
+    =&-\frac{1}{\sqrt{2}\,\kappa}-\frac{1}{\kappa^2}\,(\Gamma+\gamma-\frac{\kappa}{\sqrt{2}})=-\frac{1}{\kappa^2}\,(\Gamma+\gamma)
+\end{align*} 
+which is not satisfyable for $\Gamma,\,\gamma\neq0$, which is what we are interested in. So the only possible stationary solutions are
+\begin{align*}
+    m_x=&0\\
+    m_y=&y\\
+    \text{with}\quad0=&-\frac{\omega\Gamma}{\sqrt{2}\,\kappa^2}-\Gamma A\,y    - y^3+2\,\frac{\omega}{\kappa}\,y^2-\frac{\omega^2}{\kappa^2}\,y  
+\end{align*}
+We can multiply the equation with $\kappa^3/\omega^3$, yielding
+\begin{align*}
+    0=&-\frac{\kappa\Gamma}{\sqrt{2}\,\omega^2}-(\frac{\kappa^2}{\omega^2}\,\Gamma A+1)\,\frac{\kappa}{\omega}\,y    - \frac{\kappa^3}{\omega^3}\,y^3+2\,\frac{\kappa^2}{\omega^2}\,y^2 
+\end{align*}
+when we now redefine $\tilde{y}\vcentcolon=y\kappa/\omega$ and $\Gamma\tilde{A}\vcentcolon=\kappa^2/\omega^2\,\Gamma A$ we can restate the solution as
+\begin{align*}
+    m_x=&0\\
+    m_y=&\omega/\kappa\,\tilde{y}\\
+    \text{with}\quad0=&-\frac{\kappa^2}{\omega^2}\,B-(\Gamma \tilde{A}+1)\,\tilde{y}    - \tilde{y}^3+2\,\tilde{y}^2=\vcentcolon F'(\tilde{y})
+\end{align*}
+with the previous defined $B$. $\Gamma \tilde{A}$ can now take all real numbers as values. The analysis concerning the number of existent $m_y$-solutions is the same with a prefactor in front of $B$. 
+\begin{align*}
+    B'\vcentcolon=&\frac{\kappa^2}{\omega^2}\,B=\frac{2\,\Gamma \tilde{A}}{-1\pm\sqrt{1+8A\,(\Gamma+\gamma)}}
+\end{align*}
+For a given value of $\Gamma\tilde{A}<0$ the minimal value of $B'$ is for $A=0$ with the minus sign, which gives us $B'=-\Gamma\tilde{A}$. 
+\begin{figure}[H]
+    \floatbox[{\capbeside\captionsetup[capbesidefigure]{labelsep=newline}%
+    \thisfloatsetup{capbesideposition={right,center},capbesidewidth=none}}]{figure}[\FBwidth]
+    {\caption{The course of $F'+B'$ and $B'$ as function of $\Gamma\tilde{y}$.\\\\As the value of the maximum of $F'$ with $B'=0$ grows faster than linear, there are parameter configurations with three different fixed points. As the $B'$ can also grow infinitly for a given value of $\Gamma\tilde{A}$. There are also parameter regimes possible with only one fixed point.}}
+    {\includegraphics{pictures/numn_of_fixp.pdf}}
+\end{figure}
 
-
-
-
+\begin{figure}[H]
+    \hspace*{-1cm}
+    \includegraphics{pictures/phaseplot_A_kw.pdf}
+    \caption{The parameter configurations, where there are 1 ore 3 fixed points can be separated.}
+\end{figure}
+Also in this case we can perform again a linear expansion of the differential equations.
+\begin{align*}
+    \dt\left(\begin{array}{c}
+         \delta m_x\\
+         \delta m_y\\
+         \delta m_z
+    \end{array}\right)=&\left( \begin{array}{ccc}
+        -\Gamma\,A-y^2+\frac{\omega}{\kappa}\,y&  0 & 0\\
+        0 & -\Gamma\,A-3\,y^2+4\,\frac{\omega}{\kappa}\,y-\frac{\omega^2}{\kappa^2} & \sqrt{2}\,\Gamma\,(\kappa\,y-\omega)\\
+        0 &  -\sqrt{2}\,\Gamma\,(2\kappa\,y-\omega) & -2\Gamma^2
+    \end{array} \right)\,\left(\begin{array}{c}
+         \delta m_x\\
+         \delta m_y\\
+         \delta m_z
+    \end{array}\right)
+\end{align*}
+For the analysis of the sign of the eigenvalues we are free to multiply the matrix with a positiv number, i.e $\kappa^2/\omega^2$, what yields the matrix
+\begin{align*}
+    \mathcal{A}=\left( \begin{array}{ccc}
+        -\Gamma\tilde{A}-\tilde{y}^2+\tilde{y}&  0 & 0\\
+        0 & -\Gamma\tilde{A}-3\,\tilde{y}^2+4\,\tilde{y}-1 & \sqrt{2}\,\Gamma\kappa\,(\tilde{y}-\frac{\kappa}{\omega})\\
+        0 &  -\sqrt{2}\,\Gamma\kappa\,(2\,\tilde{y}-\frac{\kappa}{\omega}) & -2\Gamma^2\,\frac{\kappa^2}{\omega^2}
+    \end{array} \right)
+\end{align*}
 
 
 
