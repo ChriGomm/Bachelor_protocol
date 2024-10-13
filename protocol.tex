@@ -845,7 +845,7 @@ Then $A$ takes the value
     =&-\frac{1}{8\,(\Gamma+\gamma)}\\
     \Rightarrow\quad \Gamma A=&-\frac{\Gamma}{8\,(\Gamma+\gamma)}
 \end{align*}
-So $\Gamma A$ can be minimally $-1/8$. For a certain value of $A$ the corresponding $\kappa$ would be
+So $\Gamma A$ can be minimally $-1/8$. This tells us already that the minimum can't be smaller than zero. For a certain value of $A$ the corresponding $\kappa$ would be
 \begin{align*}
     A\kappa^2+\kappa/\sqrt{2}-\Gamma-\gamma=0\\
     \Rightarrow\quad \kappa_{12}=\frac{1}{2A}\,\left(-1/\sqrt{2}\pm\sqrt{1/2+4A\,(\Gamma+\gamma)}\right)\\
@@ -880,7 +880,7 @@ which has roots at
 \begin{wrapfigure}[13]{l}{0pt}
     \includegraphics{pictures/k=w_sign_of_ev1.pdf}
     \vspace*{-2cm}\caption{The roots of $\lambda_1$ and the value for $m_y$ for a selection of $\Gamma A$-values.}
-    \label{fig:k=w_numb_of_fixp}
+    \label{fig:k=w_sign_lam1}
 \end{wrapfigure}\\
 In order to determine, whether $\lambda_1$ is positive or negative we calculate the roots $m_y$ of $F$ for minimal $B$ in dependence of $\Gamma A$ numerically and compare them to the roots of $\lambda_1$. The minimal $B$ value has been chosen in the above manner as
 \begin{align*}
@@ -960,12 +960,14 @@ For a given value of $\Gamma\tilde{A}<0$ the minimal value of $B'$ is for $A=0$ 
     \thisfloatsetup{capbesideposition={right,center},capbesidewidth=none}}]{figure}[\FBwidth]
     {\caption{The course of $F'+B'$ and $B'$ as function of $\Gamma\tilde{y}$.\\\\As the value of the maximum of $F'$ with $B'=0$ grows faster than linear, there are parameter configurations with three different fixed points. As the $B'$ can also grow infinitly for a given value of $\Gamma\tilde{A}$. There are also parameter regimes possible with only one fixed point.}}
     {\includegraphics{pictures/numn_of_fixp.pdf}}
+    %{\label{fig:num_of_fixp_criterium_BF}}
 \end{figure}
 
 \begin{figure}[H]
     \hspace*{-1cm}
     \includegraphics{pictures/phaseplot_A_kw.pdf}
     \caption{The parameter configurations, where there are 1 ore 3 fixed points can be separated.}
+    \label{fig:phases_numb_of_fixp}
 \end{figure}
 Also in this case we can perform again a linear expansion of the differential equations.
 \begin{align*}
@@ -991,6 +993,30 @@ For the analysis of the sign of the eigenvalues we are free to multiply the matr
         0 &  -\sqrt{2}\,\Gamma\kappa\,(2\,\tilde{y}-\frac{\kappa}{\omega}) & -2\Gamma^2\,\frac{\kappa^2}{\omega^2}
     \end{array} \right)
 \end{align*}
+The first eigenvalue has the same form as previously. Here we have to analyse it's sign for all 3 possible fixed points. 
+\begin{wrapfigure}[23]{l}{0pt}
+    \includegraphics{pictures/sign_of_ev1.pdf}
+    \vspace*{-2cm}\caption{The smaller ($r_{\lambda_1}^{min}$) and larger ($r_{\lambda_1}^{max}$) roots of $\lambda_1$ with marked areas for the value for $\tilde{y}=k/w\cdot m_y$. $\tilde{y}_{max}$ is the $\tilde{y}$-position of $F'$.}
+    \label{fig:sign_lam1}
+\end{wrapfigure}\\
+The first, smallest fixed point has again because of the positive sign of $B'$ always a negative $y$-components. It has it's greatest value for minimal $B'$ which would be $-\Gamma\tilde{A}$ for $\tilde{A}$ less than zero. Positive values of $\tilde{A}$ lead to positive roots of $\lambda_1$, which induces that $\lambda_1$ itself is negative. So we only have to consider negative $\tilde{A}$-values. It turns out that the smaller root of $\lambda_1$ is always a root of $F'$ (for $B'=-\Gamma\tilde{A}$) which always represents $F'$'s smallest root, which can be checked by calculating the slope of $F'$ at this point.
+\begin{align*}
+    F'(\tilde{y})=-\Gamma\tilde{A}-(\Gamma \tilde{A}+1)\,\tilde{y}    - \tilde{y}^3+2\,\tilde{y}^2
+\end{align*}
+So we can move on to the next fixed point, the one in the middle. It takes it's smallest value for minimal $B'$. In this constellation the middle root is always at $\tilde{y}=1$. The maximal possible value (actually supremum) for the middle root is at the maximum point of $F'$ which is also the minimal possible value of the largest root. So we can already provide a diagramm for the possible sign-values of $\lambda_1$ in \autoref{fig:sign_lam1}.\\\\
+The other two eigenvalues are defined through the solution of the following equation
+\begin{align*}
+    0&=t^2+\left( 2\Gamma^2\,\frac{\kappa^2}{\omega^2}+\Gamma\,\tilde{A}+3\,\tilde{y}^2-4\,\tilde{y}+1  \right)\,t+2\Gamma^2\,\frac{\kappa^2}{\omega^2}\,\left( \Gamma\,\tilde{A}+3\,\tilde{y}^2-4\,\tilde{y}+1 \right)+2\,\Gamma^2\kappa^2\,(2\,\tilde{y}-\frac{\kappa}{\omega})\,(\tilde{y}-\frac{\kappa}{\omega})\\
+    &=\vcentcolon t^2+p\,t+q
+\end{align*}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{pictures/sign_of_ev2_fix1.pdf}
+    \caption{crap}
+\end{figure}
+
+
 
 
 
