@@ -783,9 +783,9 @@ A solution is
     m_y&=y\\
     \text{with}\quad F(y)\vcentcolon=-\frac{\Gamma}{\sqrt{2}\,\kappa}-\Gamma\,A\,y-y^3+2\,y^2-y &=0
 \end{align*}
-This is a stable fixed point. In order to see this we expand the equations of motion in a linear form. As we multiplied the equations for $m_x,\,m_y$ with $2\Gamma$ we have to to the same for the $m_z$ equations and rescale to be consistent. 
+This is a stable fixed point. In order to see this we expand the equations of motion in a linear form. As we multiplied the equations for $m_x,\,m_y$ with $2\Gamma/\kappa^2$ we have to to the same for the $m_z$ equations and rescale to be consistent. 
 \begin{align*}
-    0=&\sqrt{2}\,\Gamma\kappa\,m_y  - \sqrt{2}\,\Gamma\kappa\,(m_x^2+ m_y^2)+\Gamma^2-2\,\Gamma^2\,m_z
+    0=&\frac{\Gamma}{\sqrt{2}\,\kappa}\,m_y  - \frac{\Gamma}{\sqrt{2}\,\kappa}\,(m_x^2+ m_y^2)+\frac{\Gamma^2}{\kappa^2}-2\,\frac{\Gamma^2}{\kappa^2}\,m_z
 \end{align*}
 The linear expansion thus reads
 \begin{align*}
@@ -795,8 +795,8 @@ The linear expansion thus reads
          \delta m_z
     \end{array}\right)=&\left( \begin{array}{ccc}
         -\Gamma\,A-y^2+y&  0 & 0\\
-        0 & -\Gamma\,A-3\,y^2+4\,y-1 & \sqrt{2}\,\Gamma\kappa\,(y-1)\\
-        0 &  -\sqrt{2}\,\Gamma\kappa\,(2\,y-1) & -2\Gamma^2
+        0 & -\Gamma\,A-3\,y^2+4\,y-1 & \sqrt{2}\,\frac{\Gamma}{\kappa}\,(y-1)\\
+        0 &  -\sqrt{2}\,\frac{\Gamma}{\kappa}\,(2\,y-1) & -2\,\frac{\Gamma^2}{\kappa^2}
     \end{array} \right)\,\left(\begin{array}{c}
          \delta m_x\\
          \delta m_y\\
@@ -809,7 +809,7 @@ The eigenvalues of this matrix are
 \end{align*}
 and the solutions of the equation
 \begin{align*}
-    t^2+\left( 2\Gamma^2+\Gamma\,A+3\,y^2-4\,y+1  \right)\,t+2\Gamma^2\,\left( \Gamma\,A+3\,y^2-4\,y+1 \right)+2\,\Gamma^2\kappa^2\,(2\,y-1)\,(y-1)
+    t^2+\left( 2\,\frac{\Gamma^2}{\kappa^2}+\Gamma\,A+3\,y^2-4\,y+1  \right)\,t+2\,\frac{\Gamma^2}{\kappa^2}\,\left( \Gamma\,A+3\,y^2-4\,y+1 \right)+2\,\frac{\Gamma^2}{\kappa^2}\,(2\,y-1)\,(y-1)
 \end{align*}
 Let's get some intuition for what the polynomials involved in these expressions can do. First take a look on the equation for y. The polynomial of third degree can have at most two extrema. The derivative of the equation, which determines $y$, with respect to $y$ reads
 \begin{align*}
@@ -893,13 +893,13 @@ which corresponds to $\gamma\rightarrow\infty$ for $A>0$.
 As seen in the picture $\lambda_1$ is always negative except when $\Gamma A=0$, where it is $0$.\\\\\newpage
 Now we can take a look at the other two eigenvalues. For this we analyse the parts of the equation 
 \begin{align*}
-    0&=t^2+\left( 2\Gamma^2+\Gamma\,A+3\,y^2-4\,y+1  \right)\,t+2\Gamma^2\,\left( \Gamma\,A+3\,y^2-4\,y+1 \right)+2\,\Gamma^2\kappa^2\,(2\,y-1)\,(y-1)\\
+    0&=t^2+\left( 2\,\frac{\Gamma^2}{\kappa^2}+\Gamma\,A+3\,y^2-4\,y+1  \right)\,t+2\,\frac{\Gamma^2}{\kappa^2}\,\left( \Gamma\,A+3\,y^2-4\,y+1 \right)+2\,\frac{\Gamma^2}{\kappa^2}\,(2\,y-1)\,(y-1)\\
     &=\vcentcolon t^2+p\,t+q
 \end{align*}
 First $p$ is analysed. It has roots at
 \begin{align*}
-    t_{\pm}=&\frac{1}{3}\,\left(  2\pm \sqrt{4-3\,(2\Gamma^2+\Gamma A + 1)} \right)\\
-    =&\frac{1}{3}\,\left(  2\pm \sqrt{1-6\,\Gamma^2-3\,\Gamma A} \right)
+    t_{\pm}=&\frac{1}{3}\,\left(  2\pm \sqrt{4-3\,(2\Gamma^2/\kappa^2+\Gamma A + 1)} \right)\\
+    =&\frac{1}{3}\,\left(  2\pm \sqrt{1-6\,\Gamma^2/\kappa^2-3\,\Gamma A} \right)
 \end{align*}
 The expression inside the square root is maximized by minimizing $A$ with respect to $\kappa$ and $\gamma$, what results in $\Gamma A = -1/8$, which can be inferred by the previous calculation. As a consequence the expression in the square root is always negative, which means that p is always positive. For the proceeding examination we keep in mind that the eigenvalues are determined by
 \begin{align*}
@@ -977,8 +977,8 @@ Also in this case we can perform again a linear expansion of the differential eq
          \delta m_z
     \end{array}\right)=&\left( \begin{array}{ccc}
         -\Gamma\,A-y^2+\frac{\omega}{\kappa}\,y&  0 & 0\\
-        0 & -\Gamma\,A-3\,y^2+4\,\frac{\omega}{\kappa}\,y-\frac{\omega^2}{\kappa^2} & \sqrt{2}\,\Gamma\,(\kappa\,y-\omega)\\
-        0 &  -\sqrt{2}\,\Gamma\,(2\kappa\,y-\omega) & -2\Gamma^2
+        0 & -\Gamma\,A-3\,y^2+4\,\frac{\omega}{\kappa}\,y-\frac{\omega^2}{\kappa^2} & \sqrt{2}\,\frac{\Gamma^2}{\kappa^2}\,(\kappa\,y-\omega)\\
+        0 &  -\sqrt{2}\,\frac{\Gamma}{\kappa^2}\,(2\kappa\,y-\omega) & -2\,\frac{\Gamma^2}{\kappa^2}
     \end{array} \right)\,\left(\begin{array}{c}
          \delta m_x\\
          \delta m_y\\
@@ -989,8 +989,8 @@ For the analysis of the sign of the eigenvalues we are free to multiply the matr
 \begin{align*}
     \mathcal{A}=\left( \begin{array}{ccc}
         -\Gamma\tilde{A}-\tilde{y}^2+\tilde{y}&  0 & 0\\
-        0 & -\Gamma\tilde{A}-3\,\tilde{y}^2+4\,\tilde{y}-1 & \sqrt{2}\,\Gamma\kappa\,(\tilde{y}-\frac{\kappa}{\omega})\\
-        0 &  -\sqrt{2}\,\Gamma\kappa\,(2\,\tilde{y}-\frac{\kappa}{\omega}) & -2\Gamma^2\,\frac{\kappa^2}{\omega^2}
+        0 & -\Gamma\tilde{A}-3\,\tilde{y}^2+4\,\tilde{y}-1 & \sqrt{2}\,\Gamma/\kappa\,(\tilde{y}-\frac{\kappa}{\omega})\\
+        0 &  -\sqrt{2}\,\Gamma/\kappa\,(2\,\tilde{y}-\frac{\kappa}{\omega}) & -2\,\frac{\Gamma^2}{\omega^2}
     \end{array} \right)
 \end{align*}
 The first eigenvalue has the same form as previously. Here we have to analyse it's sign for all 3 possible fixed points. 
@@ -1006,7 +1006,7 @@ The first, smallest fixed point has again because of the positive sign of $B'$ a
 So we can move on to the next fixed point, the one in the middle. It takes it's smallest value for minimal $B'$. In this constellation the middle root is always at $\tilde{y}=1$. The maximal possible value (actually supremum) for the middle root is at the maximum point of $F'$ which is also the minimal possible value of the largest root. So we can already provide a diagramm for the possible sign-values of $\lambda_1$ in \autoref{fig:sign_lam1}.\\\\
 The other two eigenvalues are defined through the solution of the following equation
 \begin{align*}
-    0&=t^2+\left( 2\Gamma^2\,\frac{\kappa^2}{\omega^2}+\Gamma\,\tilde{A}+3\,\tilde{y}^2-4\,\tilde{y}+1  \right)\,t+2\Gamma^2\,\frac{\kappa^2}{\omega^2}\,\left( \Gamma\,\tilde{A}+3\,\tilde{y}^2-4\,\tilde{y}+1 \right)+2\,\Gamma^2\kappa^2\,(2\,\tilde{y}-\frac{\kappa}{\omega})\,(\tilde{y}-\frac{\kappa}{\omega})\\
+    0&=t^2+\left( 2\,\frac{\Gamma^2}{\omega^2}+\Gamma\,\tilde{A}+3\,\tilde{y}^2-4\,\tilde{y}+1  \right)\,t+2\,\frac{\Gamma^2}{\omega^2}\,\left( \Gamma\,\tilde{A}+3\,\tilde{y}^2-4\,\tilde{y}+1 \right)+2\,\frac{\Gamma^2}{\kappa^2}\,(2\,\tilde{y}-\frac{\kappa}{\omega})\,(\tilde{y}-\frac{\kappa}{\omega})\\
     &=\vcentcolon t^2+p\,t+q
 \end{align*}
 
