@@ -51,6 +51,8 @@
 \newcommand{\Trs}[1]{\Tr_S\left\{#1\right\}}
 % \newcommand{\dt}[1]{\frac{\text{d} #1}{\text{d}t}}
 \newcommand{\dt}{\frac{\text{d}}{\text{d}t}}
+\newcommand{\tk}{\tilde{\kappa}}
+\newcommand{\tw}{\tilde{\omega}}
 \maketitle
 \section*{Mean field considerations}
 \subsection*{Deriving the ME from CM}
@@ -772,20 +774,20 @@ In the following I set $\delta=0$ and $\omega=\kappa$, in order to make the eval
     -\Gamma\kappa-\Gamma\,(\gamma+\Gamma-\kappa+2\,\kappa^2/\Gamma)\,m_y&\\
     -2\,\kappa^2\,\left( m_ym_x^2+ m_y^3-m_x^2-2\,m_y^2\right) &=0
 \end{align*}
-We know rescale $\kappa\rightarrow\kappa/\sqrt{2}$ and define $\Gamma+\gamma-\kappa/\sqrt{2}=\vcentcolon A\kappa^2$.
+We know rescale $\kappa=\tilde{\kappa}/\sqrt{2}$ and define $\Gamma+\gamma-\tilde{\kappa}/\sqrt{2}=\vcentcolon A\tilde{\kappa}^2$.
 \begin{align*}
     -m_x\,\left( \Gamma\,A+m_x^2 +m_y^2-m_y\right)&=0\\\\ 
-    -\frac{\Gamma}{\sqrt{2}\,\kappa}-\Gamma\,A\,m_y-\left( m_ym_x^2+ m_y^3-m_x^2-2\,m_y^2+m_y\right) &=0
+    -\frac{\Gamma}{\sqrt{2}\,\tilde{\kappa}}-\Gamma\,A\,m_y-\left( m_ym_x^2+ m_y^3-m_x^2-2\,m_y^2+m_y\right) &=0
 \end{align*}
 A solution is
 \begin{align*}
     m_x&=0\\
     m_y&=y\\
-    \text{with}\quad F(y)\vcentcolon=-\frac{\Gamma}{\sqrt{2}\,\kappa}-\Gamma\,A\,y-y^3+2\,y^2-y &=0
+    \text{with}\quad F(y)\vcentcolon=-\frac{\Gamma}{\sqrt{2}\,\tilde{\kappa}}-\Gamma\,A\,y-y^3+2\,y^2-y &=0
 \end{align*}
-This is a stable fixed point. In order to see this we expand the equations of motion in a linear form. As we multiplied the equations for $m_x,\,m_y$ with $2\Gamma/\kappa^2$ we have to to the same for the $m_z$ equations and rescale to be consistent. 
+This is a stable fixed point. In order to see this we expand the equations of motion in a linear form. As we multiplied the equations for $m_x,\,m_y$ with $2\Gamma/\tilde{\kappa}^2$ we have to to the same for the $m_z$ equations and rescale to be consistent. 
 \begin{align*}
-    0=&\frac{\Gamma}{\sqrt{2}\,\kappa}\,m_y  - \frac{\Gamma}{\sqrt{2}\,\kappa}\,(m_x^2+ m_y^2)+\frac{\Gamma^2}{\kappa^2}-2\,\frac{\Gamma^2}{\kappa^2}\,m_z
+    0=&\frac{\Gamma}{\sqrt{2}\,\tilde{\kappa}}\,m_y  - \frac{\Gamma}{\sqrt{2}\,\tilde{\kappa}}\,(m_x^2+ m_y^2)+\frac{\Gamma^2}{\tilde{\kappa}^2}-2\,\frac{\Gamma^2}{\tilde{\kappa}^2}\,m_z
 \end{align*}
 The linear expansion thus reads
 \begin{align*}
@@ -795,8 +797,8 @@ The linear expansion thus reads
          \delta m_z
     \end{array}\right)=&\left( \begin{array}{ccc}
         -\Gamma\,A-y^2+y&  0 & 0\\
-        0 & -\Gamma\,A-3\,y^2+4\,y-1 & \sqrt{2}\,\frac{\Gamma}{\kappa}\,(y-1)\\
-        0 &  -\sqrt{2}\,\frac{\Gamma}{\kappa}\,(2\,y-1) & -2\,\frac{\Gamma^2}{\kappa^2}
+        0 & -\Gamma\,A-3\,y^2+4\,y-1 & \sqrt{2}\,\frac{\Gamma}{\tilde{\kappa}}\,(y-1)\\
+        0 &  -\sqrt{2}\,\frac{\Gamma}{\tilde{\kappa}}\,(2\,y-1) & -2\,\frac{\Gamma^2}{\tilde{\kappa}^2}
     \end{array} \right)\,\left(\begin{array}{c}
          \delta m_x\\
          \delta m_y\\
@@ -809,7 +811,7 @@ The eigenvalues of this matrix are
 \end{align*}
 and the solutions of the equation
 \begin{align*}
-    t^2+\left( 2\,\frac{\Gamma^2}{\kappa^2}+\Gamma\,A+3\,y^2-4\,y+1  \right)\,t+2\,\frac{\Gamma^2}{\kappa^2}\,\left( \Gamma\,A+3\,y^2-4\,y+1 \right)+2\,\frac{\Gamma^2}{\kappa^2}\,(2\,y-1)\,(y-1)
+    t^2+\left( 2\,\frac{\Gamma^2}{\tilde{\kappa}^2}+\Gamma\,A+3\,y^2-4\,y+1  \right)\,t+2\,\frac{\Gamma^2}{\tilde{\kappa}^2}\,\left( \Gamma\,A+3\,y^2-4\,y+1 \right)+2\,\frac{\Gamma^2}{\tilde{\kappa}^2}\,(2\,y-1)\,(y-1)
 \end{align*}
 Let's get some intuition for what the polynomials involved in these expressions can do. First take a look on the equation for y. The polynomial of third degree can have at most two extrema. The derivative of the equation, which determines $y$, with respect to $y$ reads
 \begin{align*}
@@ -820,23 +822,23 @@ The roots of this exression are found at
     y_{12}=&\frac{1}{3}\,\left(  2\pm \sqrt{4-3\,(\Gamma A+1)}  \right)\\
     =&\frac{1}{3}\,\left(  2\pm \sqrt{1-3\,\Gamma A}  \right)
 \end{align*}
-Thus $F(y)$ has no extrema, if $\Gamma A\geq1/3$. Through the choice of the parameters $\Gamma/\sqrt{2}\kappa$ the position and existence of the roots can be controlled. But it has to be remembered that these parameters only can be positive. The effect of this is examined by resolving the above equation for $\Gamma A$, and inserting it into $F$.
+Thus $F(y)$ has no extrema, if $\Gamma A\geq1/3$. Through the choice of the parameters $\Gamma/\sqrt{2}\tilde{\kappa}$ the position and existence of the roots can be controlled. But it has to be remembered that these parameters only can be positive. The effect of this is examined by resolving the above equation for $\Gamma A$, and inserting it into $F$.
 \begin{align*}
     (3\,y_{12}-2)^2=&1-3\,\Gamma A\\
     \Gamma A=& \frac{1}{3}\,\left(  1-(3\,y_{12}-2)^2 \right)\\\\
-    \Rightarrow\quad F(y_{12})=&-\frac{\Gamma}{\sqrt{2}\,\kappa}-\frac{1}{3}\,\left(  1-(3\,y_{12}-2)^2 +3\right)\,y_{12}-y_{12}^3+2\,y_{12}^2\\
-    =&-\frac{\Gamma}{\sqrt{2}\,\kappa}-\frac{1}{3}\,\left( - 9\,y_{12}^2+12\,y_{12}\right)\,y_{12}-y_{12}^3+2\,y_{12}^2\\
-    =&-\frac{\Gamma}{\sqrt{2}\,\kappa}+2\,y_{12}^3-2\,y_{12}^2\\
+    \Rightarrow\quad F(y_{12})=&-\frac{\Gamma}{\sqrt{2}\,\tilde{\kappa}}-\frac{1}{3}\,\left(  1-(3\,y_{12}-2)^2 +3\right)\,y_{12}-y_{12}^3+2\,y_{12}^2\\
+    =&-\frac{\Gamma}{\sqrt{2}\,\tilde{\kappa}}-\frac{1}{3}\,\left( - 9\,y_{12}^2+12\,y_{12}\right)\,y_{12}-y_{12}^3+2\,y_{12}^2\\
+    =&-\frac{\Gamma}{\sqrt{2}\,\tilde{\kappa}}+2\,y_{12}^3-2\,y_{12}^2\\
 \end{align*}
-$F(y_{12})$ gives the position of the maximum and minimum of $F$. For $\Gamma/\kappa\rightarrow0$ there remains
+$F(y_{12})$ gives the position of the maximum and minimum of $F$. For $\Gamma/\tilde{\kappa}\rightarrow0$ there remains
 \begin{align*}
     F(y_{12})=&2\,y_{12}^3-2\,y_{12}^2\\
     =&2\,y_{12}^2\,(y_{12}-1)
 \end{align*}
-We can tell from here, that the maximum is negative until $y_{12}=1$ which corresponds to $\Gamma A =0$ and the minimum is always negative except when $y_{12}=0$ which corresponds to $\Gamma A=-1$. Let's examine which values the parameters $\Gamma A$ and $B\vcentcolon=\Gamma/\sqrt{2}\kappa$ can take. $A$ has as a function of $\kappa$ it's minimum value for
+We can tell from here, that the maximum is negative until $y_{12}=1$ which corresponds to $\Gamma A =0$ and the minimum is always negative except when $y_{12}=0$ which corresponds to $\Gamma A=-1$. Let's examine which values the parameters $\Gamma A$ and $B\vcentcolon=\Gamma/\sqrt{2}\tilde{\kappa}$ can take. $A$ has as a function of $\tilde{\kappa}$ it's minimum value for
 \begin{align*}
-    -\frac{2\,(\Gamma+\gamma)}{\kappa^3}+\frac{1}{\sqrt{2}\kappa^2}=&0\\
-    \Rightarrow\quad\text{if}\quad \kappa=&\sqrt{8}\,(\Gamma+\gamma)
+    -\frac{2\,(\Gamma+\gamma)}{\tilde{\kappa}^3}+\frac{1}{\sqrt{2}\tilde{\kappa}^2}=&0\\
+    \Rightarrow\quad\text{if}\quad \tilde{\kappa}=&\sqrt{8}\,(\Gamma+\gamma)
 \end{align*}
 Then $A$ takes the value
 \begin{align*}
@@ -845,9 +847,9 @@ Then $A$ takes the value
     =&-\frac{1}{8\,(\Gamma+\gamma)}\\
     \Rightarrow\quad \Gamma A=&-\frac{\Gamma}{8\,(\Gamma+\gamma)}
 \end{align*}
-So $\Gamma A$ can be minimally $-1/8$. This tells us already that the minimum can't be smaller than zero. For a certain value of $A$ the corresponding $\kappa$ would be
+So $\Gamma A$ can be minimally $-1/8$. This tells us already that the minimum can't be smaller than zero. For a certain value of $A$ the corresponding $\tilde{\kappa}$ would be
 \begin{align*}
-    A\kappa^2+\kappa/\sqrt{2}-\Gamma-\gamma=0\\
+    A\tilde{\kappa}^2+\tilde{\kappa}/\sqrt{2}-\Gamma-\gamma=0\\
     \Rightarrow\quad \kappa_{12}=\frac{1}{2A}\,\left(-1/\sqrt{2}\pm\sqrt{1/2+4A\,(\Gamma+\gamma)}\right)\\
 \end{align*}
 From this $B$ can be determined
@@ -893,66 +895,66 @@ which corresponds to $\gamma\rightarrow\infty$ for $A>0$.
 As seen in the picture $\lambda_1$ is always negative except when $\Gamma A=0$, where it is $0$.\\\\\newpage
 Now we can take a look at the other two eigenvalues. For this we analyse the parts of the equation 
 \begin{align*}
-    0&=t^2+\left( 2\,\frac{\Gamma^2}{\kappa^2}+\Gamma\,A+3\,y^2-4\,y+1  \right)\,t+2\,\frac{\Gamma^2}{\kappa^2}\,\left( \Gamma\,A+3\,y^2-4\,y+1 \right)+2\,\frac{\Gamma^2}{\kappa^2}\,(2\,y-1)\,(y-1)\\
+    0&=t^2+\left( 2\,\frac{\Gamma^2}{\tilde{\kappa}^2}+\Gamma\,A+3\,y^2-4\,y+1  \right)\,t+2\,\frac{\Gamma^2}{\tilde{\kappa}^2}\,\left( \Gamma\,A+3\,y^2-4\,y+1 \right)+2\,\frac{\Gamma^2}{\tilde{\kappa}^2}\,(2\,y-1)\,(y-1)\\
     &=\vcentcolon t^2+p\,t+q
 \end{align*}
 First $p$ is analysed. It has roots at
 \begin{align*}
-    t_{\pm}=&\frac{1}{3}\,\left(  2\pm \sqrt{4-3\,(2\Gamma^2/\kappa^2+\Gamma A + 1)} \right)\\
-    =&\frac{1}{3}\,\left(  2\pm \sqrt{1-6\,\Gamma^2/\kappa^2-3\,\Gamma A} \right)
+    t_{\pm}=&\frac{1}{3}\,\left(  2\pm \sqrt{4-3\,(2\Gamma^2/\tilde{\kappa}^2+\Gamma A + 1)} \right)\\
+    =&\frac{1}{3}\,\left(  2\pm \sqrt{1-6\,\Gamma^2/\tilde{\kappa}^2-3\,\Gamma A} \right)
 \end{align*}
-The expression inside the square root is maximized by minimizing $A$ with respect to $\kappa$ and $\gamma$, what results in $\Gamma A = -1/8$, which can be inferred by the previous calculation. As a consequence the expression in the square root is always negative, which means that p is always positive. For the proceeding examination we keep in mind that the eigenvalues are determined by
+The expression inside the square root is maximized by minimizing $A$ with respect to $\tilde{\kappa}$ and $\gamma$, what results in $\Gamma A = -1/8$, which can be inferred by the previous calculation. As a consequence the expression in the square root is always negative, which means that p is always positive. For the proceeding examination we keep in mind that the eigenvalues are determined by
 \begin{align*}
     \lambda_{23}=\half\,(-p\pm\sqrt{p^2-4q})
 \end{align*}
 If $q$ is positive then both eigenvalues are negative. So let's analyse $q$. 
 \begin{align*}
-    \frac{q}{2\Gamma^2}=&\Gamma A +1 +\kappa^2-(4+3\,\kappa^2)\,y+(3+2\,\kappa^2)\,y^2\overset{!}{=}0\\
-    \Rightarrow\quad y_{12}=&\frac{1}{2\,(3+2\,\kappa^2)}\,\left( 4+3\,\kappa^2\pm \sqrt{16+24\,\kappa^2+9\,\kappa^4-(3+2\,\kappa^2)\,(\Gamma A +1 +\kappa^2)}   \right)\\
-    =&\frac{1}{2\,(3+2\,\kappa^2)}\,\left( 4+3\,\kappa^2\pm \sqrt{16+24\,\kappa^2+9\,\kappa^4 -3\,\Gamma A -3 -3\,\kappa^2-2\,(\Gamma A+1)\,\kappa^2-2\,\kappa^4}   \right)\\
-    =&\frac{1}{2\,(3+2\,\kappa^2)}\,\left( 4+3\,\kappa^2\pm \sqrt{13-3\,\Gamma A+(19-2\,\Gamma A)\,\kappa^2+7\,\kappa^4}   \right)\\
+    \frac{q}{2\Gamma^2}=&\Gamma A +1 +\tilde{\kappa}^2-(4+3\,\tilde{\kappa}^2)\,y+(3+2\,\tilde{\kappa}^2)\,y^2\overset{!}{=}0\\
+    \Rightarrow\quad y_{12}=&\frac{1}{2\,(3+2\,\tilde{\kappa}^2)}\,\left( 4+3\,\tilde{\kappa}^2\pm \sqrt{16+24\,\tilde{\kappa}^2+9\,\tilde{\kappa}^4-(3+2\,\tilde{\kappa}^2)\,(\Gamma A +1 +\tilde{\kappa}^2)}   \right)\\
+    =&\frac{1}{2\,(3+2\,\tilde{\kappa}^2)}\,\left( 4+3\,\tilde{\kappa}^2\pm \sqrt{16+24\,\tilde{\kappa}^2+9\,\tilde{\kappa}^4 -3\,\Gamma A -3 -3\,\tilde{\kappa}^2-2\,(\Gamma A+1)\,\tilde{\kappa}^2-2\,\tilde{\kappa}^4}   \right)\\
+    =&\frac{1}{2\,(3+2\,\tilde{\kappa}^2)}\,\left( 4+3\,\tilde{\kappa}^2\pm \sqrt{13-3\,\Gamma A+(19-2\,\Gamma A)\,\tilde{\kappa}^2+7\,\tilde{\kappa}^4}   \right)\\
 \end{align*}
 Let's look at the term 
 \begin{align*}
-    3\,\Gamma A +3 +3\,\kappa^2+2\,(\Gamma A+1)\,\kappa^2+2\,\kappa^4
+    3\,\Gamma A +3 +3\,\tilde{\kappa}^2+2\,(\Gamma A+1)\,\tilde{\kappa}^2+2\,\tilde{\kappa}^4
 \end{align*}
-This term has to become negative in order for one of the $y_{12}$ to get negative too. The $\kappa^2$-roots are found at
+This term has to become negative in order for one of the $y_{12}$ to get negative too. The $\tilde{\kappa}^2$-roots are found at
 \begin{align*}
-    \kappa^2_{12}=&\frac{1}{32}\,(-5/2-\Gamma A\pm\sqrt{(5/2+\Gamma A)^2-2\,(3\,\Gamma A+3)})
+    \tilde{\kappa}^2_{12}=&\frac{1}{32}\,(-5/2-\Gamma A\pm\sqrt{(5/2+\Gamma A)^2-2\,(3\,\Gamma A+3)})
 \end{align*}
-Because $3\,\Gamma A+3$ can never become negative in the allowed parameter range, the $\kappa^2$-roots would be negative, which is not possible. Therefore the examined expression can not be negative, which infers that $y_{12}$ is always positive. As we have seen that $m_y$ is always negative, it follows, that $q$ is always positive, which again let's us know, that both eigenvalues $\lambda_{2},\,\lambda_3$ are always negative. which makes the fix point stable and the configuration physically possible.\\\\
+Because $3\,\Gamma A+3$ can never become negative in the allowed parameter range, the $\tilde{\kappa}^2$-roots would be negative, which is not possible. Therefore the examined expression can not be negative, which infers that $y_{12}$ is always positive. As we have seen that $m_y$ is always negative, it follows, that $q$ is always positive, which again let's us know, that both eigenvalues $\lambda_{2},\,\lambda_3$ are always negative. which makes the fix point stable and the configuration physically possible.\\\\
 
-In a next step we let be $\kappa\neq\omega$, while $\delta=0$ remains. Thus we are looking at the equations
+In a next step we let be $\tilde{\kappa}\neq\omega$, while $\delta=0$ remains. With the definition $\omega=\tilde{\omega}/\sqrt{2}$ we are looking at the equations
 \begin{align*}
-    -m_x\,\left(\Gamma A+( m_x^2+ m_y^2)-\frac{\omega}{\kappa}\,m_y\right)  &=0\\\\
-    -\frac{\omega\Gamma}{\sqrt{2}\,\kappa^2}-\Gamma A\,m_y    -m_ym_x^2- m_y^3+\frac{\omega}{\kappa}\,(m_x^2+2\,m_y^2)-\frac{\omega^2}{\kappa^2}\,m_y  &=0
+    -m_x\,\left(\Gamma A+( m_x^2+ m_y^2)-\frac{\tilde{\omega}}{\tilde{\kappa}}\,m_y\right)  &=0\\\\
+    -\frac{\tilde{\omega}\Gamma}{\sqrt{2}\,\tilde{\kappa}^2}-\Gamma A\,m_y    -m_ym_x^2- m_y^3+\frac{\tilde{\omega}}{\tilde{\kappa}}\,(m_x^2+2\,m_y^2)-\frac{\tilde{\omega}^2}{\tilde{\kappa}^2}\,m_y  &=0
 \end{align*}
 First I show, that also in this case there is no solution for $m_x\neq0$. There we would have
 \begin{align*}
-    m_x^2=&-m_y^2+\frac{\omega}{\kappa}\,m_y-\Gamma A \\
-    \Rightarrow\quad0=&-\frac{\omega\Gamma}{\sqrt{2}\,\kappa^2}-\Gamma A\,m_y    -m_y\,(-m_y^2+\frac{\omega}{\kappa}\,m_y-\Gamma A)- m_y^3+\frac{\omega}{\kappa}\,(-m_y^2+\frac{\omega}{\kappa}\,m_y-\Gamma A+2\,m_y^2)-\frac{\omega^2}{\kappa^2}\,m_y  \\
-    =&-\frac{\omega\Gamma}{\sqrt{2}\,\kappa^2}-\frac{\omega}{\kappa}\,\Gamma A\\
-    =&-\frac{1}{\sqrt{2}\,\kappa}-\frac{1}{\kappa^2}\,(\Gamma+\gamma-\frac{\kappa}{\sqrt{2}})=-\frac{1}{\kappa^2}\,(\Gamma+\gamma)
+    m_x^2=&-m_y^2+\frac{\tilde{\omega}}{\tilde{\kappa}}\,m_y-\Gamma A \\
+    \Rightarrow\quad0=&-\frac{\tilde{\omega}\Gamma}{\sqrt{2}\,\tilde{\kappa}^2}-\Gamma A\,m_y    -m_y\,(-m_y^2+\frac{\tilde{\omega}}{\tilde{\kappa}}\,m_y-\Gamma A)- m_y^3+\frac{\tilde{\omega}}{\tilde{\kappa}}\,(-m_y^2+\frac{\tilde{\omega}}{\tilde{\kappa}}\,m_y-\Gamma A+2\,m_y^2)-\frac{\tilde{\omega}^2}{\tilde{\kappa}^2}\,m_y  \\
+    =&-\frac{\tilde{\omega}\Gamma}{\sqrt{2}\,\tilde{\kappa}^2}-\frac{\tilde{\omega}}{\tilde{\kappa}}\,\Gamma A\\
+    =&-\frac{1}{\sqrt{2}\,\tilde{\kappa}}-\frac{1}{\tilde{\kappa}^2}\,(\Gamma+\gamma-\frac{\tilde{\kappa}}{\sqrt{2}})=-\frac{1}{\tilde{\kappa}^2}\,(\Gamma+\gamma)
 \end{align*} 
 which is not satisfyable for $\Gamma,\,\gamma\neq0$, which is what we are interested in. So the only possible stationary solutions are
 \begin{align*}
     m_x=&0\\
     m_y=&y\\
-    \text{with}\quad0=&-\frac{\omega\Gamma}{\sqrt{2}\,\kappa^2}-\Gamma A\,y    - y^3+2\,\frac{\omega}{\kappa}\,y^2-\frac{\omega^2}{\kappa^2}\,y  
+    \text{with}\quad0=&-\frac{\tilde{\omega}\Gamma}{\sqrt{2}\,\tilde{\kappa}^2}-\Gamma A\,y    - y^3+2\,\frac{\tilde{\omega}}{\tilde{\kappa}}\,y^2-\frac{\tilde{\omega}^2}{\tilde{\kappa}^2}\,y  
 \end{align*}
-We can multiply the equation with $\kappa^3/\omega^3$, yielding
+We can multiply the equation with $\tilde{\kappa}^3/\tilde{\omega}^3$, yielding
 \begin{align*}
-    0=&-\frac{\kappa\Gamma}{\sqrt{2}\,\omega^2}-(\frac{\kappa^2}{\omega^2}\,\Gamma A+1)\,\frac{\kappa}{\omega}\,y    - \frac{\kappa^3}{\omega^3}\,y^3+2\,\frac{\kappa^2}{\omega^2}\,y^2 
+    0=&-\frac{\tilde{\kappa}\Gamma}{\sqrt{2}\,\tilde{\omega}^2}-(\frac{\tilde{\kappa}^2}{\tilde{\omega}^2}\,\Gamma A+1)\,\frac{\tilde{\kappa}}{\tilde{\omega}}\,y    - \frac{\tilde{\kappa}^3}{\tilde{\omega}^3}\,y^3+2\,\frac{\tilde{\kappa}^2}{\tilde{\omega}^2}\,y^2 
 \end{align*}
-when we now redefine $\tilde{y}\vcentcolon=y\kappa/\omega$ and $\Gamma\tilde{A}\vcentcolon=\kappa^2/\omega^2\,\Gamma A$ we can restate the solution as
+when we now redefine $\tilde{y}\vcentcolon=y\tilde{\kappa}/\tilde{\omega}$ and $\Gamma\tilde{A}\vcentcolon=\tilde{\kappa}^2/\tilde{\omega}^2\,\Gamma A$ we can restate the solution as
 \begin{align*}
     m_x=&0\\
-    m_y=&\omega/\kappa\,\tilde{y}\\
-    \text{with}\quad0=&-\frac{\kappa^2}{\omega^2}\,B-(\Gamma \tilde{A}+1)\,\tilde{y}    - \tilde{y}^3+2\,\tilde{y}^2=\vcentcolon F'(\tilde{y})
+    m_y=&\tilde{\omega}/\tilde{\kappa}\,\tilde{y}\\
+    \text{with}\quad0=&-\frac{\tilde{\kappa}^2}{\tilde{\omega}^2}\,B-(\Gamma \tilde{A}+1)\,\tilde{y}    - \tilde{y}^3+2\,\tilde{y}^2=\vcentcolon F'(\tilde{y})
 \end{align*}
 with the previous defined $B$. $\Gamma \tilde{A}$ can now take all real numbers as values. The analysis concerning the number of existent $m_y$-solutions is the same with a prefactor in front of $B$. 
 \begin{align*}
-    B'\vcentcolon=&\frac{\kappa^2}{\omega^2}\,B=\frac{2\,\Gamma \tilde{A}}{-1\pm\sqrt{1+8A\,(\Gamma+\gamma)}}
+    B'\vcentcolon=&\frac{\tilde{\kappa}^2}{\tilde{\omega}^2}\,B=\frac{2\,\Gamma \tilde{A}}{-1\pm\sqrt{1+8A\,(\Gamma+\gamma)}}
 \end{align*}
 For a given value of $\Gamma\tilde{A}<0$ the minimal value of $B'$ is for $A=0$ with the minus sign, which gives us $B'=-\Gamma\tilde{A}$. 
 \begin{figure}[H]
@@ -962,7 +964,15 @@ For a given value of $\Gamma\tilde{A}<0$ the minimal value of $B'$ is for $A=0$ 
     {\includegraphics{pictures/numn_of_fixp.pdf}}
     %{\label{fig:num_of_fixp_criterium_BF}}
 \end{figure}
-
+\begin{align*}
+    B'=&\frac{1}{\tw^2}\,\frac{2\,\Gamma\,(\Gamma+\gamma)\,(1-\frac{\tk}{\sqrt{2}})}{-1\pm\sqrt{1+8\,\frac{(\Gamma+\gamma)^2}{\tk^2}\,(1-\frac{\tk}{\sqrt{2}})}}
+\end{align*}
+With the rescaling $\Omega=\tw/\sqrt{2\,\Gamma\,(\Gamma+\gamma)}$ and $K=\tk/(\sqrt{2}\,(\Gamma+\gamma))$ we get
+\begin{align*}
+    B'=&\frac{K}{2\,\Omega^2}\\
+    \text{and}\quad y_\text{max}=&\frac{1}{3}\,\left( 2+ \sqrt{1-\frac{3}{2}\,(1-K)\,\frac{1}{\Omega^2}}  \right)
+\end{align*}
+In this way we can compute the border between the configurations with different numbers of fixed points numerically.
 \begin{figure}[H]
     \hspace*{-1cm}
     \includegraphics{pictures/phaseplot_A_kw.pdf}
@@ -976,21 +986,21 @@ Also in this case we can perform again a linear expansion of the differential eq
          \delta m_y\\
          \delta m_z
     \end{array}\right)=&\left( \begin{array}{ccc}
-        -\Gamma\,A-y^2+\frac{\omega}{\kappa}\,y&  0 & 0\\
-        0 & -\Gamma\,A-3\,y^2+4\,\frac{\omega}{\kappa}\,y-\frac{\omega^2}{\kappa^2} & \sqrt{2}\,\frac{\Gamma^2}{\kappa^2}\,(\kappa\,y-\omega)\\
-        0 &  -\sqrt{2}\,\frac{\Gamma}{\kappa^2}\,(2\kappa\,y-\omega) & -2\,\frac{\Gamma^2}{\kappa^2}
+        -\Gamma\,A-y^2+\frac{\tilde{\omega}}{\tilde{\kappa}}\,y&  0 & 0\\
+        0 & -\Gamma\,A-3\,y^2+4\,\frac{\tilde{\omega}}{\tilde{\kappa}}\,y-\frac{\tilde{\omega}^2}{\tilde{\kappa}^2} & \sqrt{2}\,\frac{\Gamma^2}{\tilde{\kappa}^2}\,(\tilde{\kappa}\,y-\tilde{\omega})\\
+        0 &  -\sqrt{2}\,\frac{\Gamma}{\tilde{\kappa}^2}\,(2\tilde{\kappa}\,y-\tilde{\omega}) & -2\,\frac{\Gamma^2}{\tilde{\kappa}^2}
     \end{array} \right)\,\left(\begin{array}{c}
          \delta m_x\\
          \delta m_y\\
          \delta m_z
     \end{array}\right)
 \end{align*}
-For the analysis of the sign of the eigenvalues we are free to multiply the matrix with a positiv number, i.e $\kappa^2/\omega^2$, what yields the matrix
+For the analysis of the sign of the eigenvalues we are free to multiply the matrix with a positiv number, i.e $\tilde{\kappa}^2/\tilde{\omega}^2$, what yields the matrix
 \begin{align*}
     \mathcal{A}=\left( \begin{array}{ccc}
         -\Gamma\tilde{A}-\tilde{y}^2+\tilde{y}&  0 & 0\\
-        0 & -\Gamma\tilde{A}-3\,\tilde{y}^2+4\,\tilde{y}-1 & \sqrt{2}\,\Gamma/\kappa\,(\tilde{y}-\frac{\kappa}{\omega})\\
-        0 &  -\sqrt{2}\,\Gamma/\kappa\,(2\,\tilde{y}-\frac{\kappa}{\omega}) & -2\,\frac{\Gamma^2}{\omega^2}
+        0 & -\Gamma\tilde{A}-3\,\tilde{y}^2+4\,\tilde{y}-1 & \sqrt{2}\,\Gamma/\tilde{\kappa}\,(\tilde{y}-\frac{\tilde{\kappa}}{\tilde{\omega}})\\
+        0 &  -\sqrt{2}\,\Gamma/\tilde{\kappa}\,(2\,\tilde{y}-\frac{\tilde{\kappa}}{\tilde{\omega}}) & -2\,\frac{\Gamma^2}{\tilde{\omega}^2}
     \end{array} \right)
 \end{align*}
 The first eigenvalue has the same form as previously. Here we have to analyse it's sign for all 3 possible fixed points. 
@@ -1006,15 +1016,15 @@ The first, smallest fixed point has again because of the positive sign of $B'$ a
 So we can move on to the next fixed point, the one in the middle. It takes it's smallest value for minimal $B'$. In this constellation the middle root is always at $\tilde{y}=1$. The maximal possible value (actually supremum) for the middle root is at the maximum point of $F'$ which is also the minimal possible value of the largest root. So we can already provide a diagramm for the possible sign-values of $\lambda_1$ in \autoref{fig:sign_lam1}.\\\\
 The other two eigenvalues are defined through the solution of the following equation
 \begin{align*}
-    0&=t^2+\left( 2\,\frac{\Gamma^2}{\omega^2}+\Gamma\,\tilde{A}+3\,\tilde{y}^2-4\,\tilde{y}+1  \right)\,t+2\,\frac{\Gamma^2}{\omega^2}\,\left( \Gamma\,\tilde{A}+3\,\tilde{y}^2-4\,\tilde{y}+1 \right)+2\,\frac{\Gamma^2}{\kappa^2}\,(2\,\tilde{y}-\frac{\kappa}{\omega})\,(\tilde{y}-\frac{\kappa}{\omega})\\
+    0&=t^2+\left( 2\,\frac{\Gamma^2}{\tilde{\omega}^2}+\Gamma\,\tilde{A}+3\,\tilde{y}^2-4\,\tilde{y}+1  \right)\,t+2\,\frac{\Gamma^2}{\tilde{\omega}^2}\,\left( \Gamma\,\tilde{A}+3\,\tilde{y}^2-4\,\tilde{y}+1 \right)+2\,\frac{\Gamma^2}{\tilde{\kappa}^2}\,(2\,\tilde{y}-\frac{\tilde{\kappa}}{\tilde{\omega}})\,(\tilde{y}-\frac{\tilde{\kappa}}{\tilde{\omega}})\\
     &=\vcentcolon t^2+p\,t+q
 \end{align*}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics{pictures/sign_of_ev2_fix1.pdf}
-    \caption{crap}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics{pictures/sign_of_ev2_fix1.pdf}
+%     \caption{crap}
+% \end{figure}
 
 
 
