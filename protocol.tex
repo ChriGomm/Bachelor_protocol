@@ -1027,7 +1027,49 @@ So we only have to consider positive $\chi$-values, in rememberence of fact, tha
     F'(\tilde{y})=-\half\,\chi-(1-\half\,\chi)\,\tilde{y}    - \tilde{y}^3+2\,\tilde{y}^2
 \end{align*}
 So we can move on to the next fixed point, the one in the middle. It takes it's smallest value for minimal $B'$. In this constellation the middle root turns out to be always at $\tilde{y}=1$. The maximal possible value (actually supremum) for the middle root is at the maximum point of $F'$ which is also the minimal possible value of the largest root. So we can already provide a diagramm for the possible sign-values of $\lambda_1$ in \autoref{fig:sign_lam1}.\\\\
-At this point I want to discuss which of the above computed are physical meaning $|m|<=1/2$\\\\
+At this point I want to discuss which of the above computed fixed points are physical ones, meaning $|m|<=1/2$. Therefore we consider the total mean angular momentum.
+\begin{align*}
+    m_z=&\half-\frac{1}{\Gamma}\,\left( \kappa\,(m_x^2+m_y^2)-\omega m_y  \right)\\
+    =&\half-\frac{\kappa}{\Gamma}\,\left( m_y^2-\frac{\omega}{\kappa}\, m_y  \right)\\
+    \Rightarrow\quad |m|^2=&\left( \half-\frac{\kappa}{\Gamma}\,\left( m_y^2-\frac{\omega}{\kappa}\, m_y  \right) \right)^2+m_y^2\\
+    =&\left( \half-\frac{\omega^2}{\Gamma\kappa}\,\left( \tilde{y}^2- \tilde{y} \right) \right)^2+\frac{\omega^2}{\kappa^2}\,\tilde{y}^2\\
+    =&\left( \half-\frac{\Omega^2}{K}\,\left( \tilde{y}^2- \tilde{y} \right) \right)^2+\frac{\Gamma}{\Gamma+\gamma}\,\frac{\Omega^2}{K^2}\,\tilde{y}^2\\
+    \leq&\left( \half-\frac{\Omega^2}{K}\,\left( \tilde{y}^2- \tilde{y} \right) \right)^2+\frac{\Omega^2}{K^2}\,\tilde{y}^2\\
+    =&\vcentcolon m^*
+\end{align*}
+
+Now I set $\Omega^2/K$ through the determining equation for $m_y$.
+\begin{align*}
+    0=&-\frac{K}{2\Omega^2}-\left( \frac{1-K}{2\Omega^2} +1\right)\,\tilde{y}-\tilde{y}^2+2\,\tilde{y}^2\\
+    \Rightarrow\quad \frac{K}{2\Omega^2}\,(\tilde{y}-1)=&(1+\frac{1}{2\Omega^2})\,\tilde{y}+\tilde{y}^3-2\,\tilde{y}^2\\
+    \frac{\Omega^2}{K}=&\frac{\tilde{y}-1}{2\,\left(  (1+\frac{1}{2\Omega^2})\,\tilde{y}+\tilde{y}^3-2\,\tilde{y}^2\right)}
+\end{align*}
+\begin{align*}
+    \frac{\text{d}}{\text{d}\tilde{y}}\,\frac{\Omega^2}{K}=&\frac{1}{2\,\left(  (1+\frac{1}{2\Omega^2})\,\tilde{y}+\tilde{y}^3-2\,\tilde{y}^2\right)}-\frac{2\,(\tilde{y}-1)\,(1+\frac{1}{2\Omega^2}+3\,\tilde{y}^2-4\,\tilde{y})}{4\,\left(  (1+\frac{1}{2\Omega^2})\,\tilde{y}+\tilde{y}^3-2\,\tilde{y}^2\right)^2}\\\\
+    =&\frac{1+\frac{1}{2\Omega^2}-4\,\tilde{y}+5\,\tilde{y}^2-2\,\tilde{y}^3}{2\,\left(  (1+\frac{1}{2\Omega^2})\,\tilde{y}+\tilde{y}^3-2\,\tilde{y}^2\right)^2}
+\end{align*}
+
+This equation looks at first strange, because $k/2\Omega^2$ could be negative for $0<\tilde{y}<1$. But as we've already seen in \autoref{fig:sign_lam1}, this space is free of fixed points. \\\\
+Taking the derivative of $m^*$
+\begin{align*}
+    \frac{\partial m^*}{\partial\tilde{y}}=&-2\,\left(\frac{\Omega^2}{K}\,(2\tilde{y}-1)+\left(\frac{\text{d}}{\text{d}\tilde{y}}\,\frac{\Omega^2}{K}\right)\,(\tilde{y}^2-\tilde{y})\right)\,\left( \half-\frac{\Omega^2}{K}\,\left( \tilde{y}^2- \tilde{y} \right) \right)+2\,\frac{\Omega^2}{K^2}\,\tilde{y}+2\,\left(\frac{\text{d}}{\text{d}\tilde{y}}\,\frac{\Omega^2}{K}\right)\,\frac{\Omega^2}{K}\,\frac{1}{\Omega^2}\,\tilde{y}^2\\
+    % =&4\,(\frac{\Omega^2}{K})^2\,\tilde{y}^3-\left(2\,(\frac{\Omega^2}{K})^2+4\,(\frac{\Omega^2}{K})^2\right)\,\tilde{y}^2+\left( 2\,(\frac{\Omega^2}{K})^2+2\,\frac{\Omega^2}{K^2}-2\,\frac{\Omega^2}{K} \right)\,\tilde{y}+\frac{\Omega^2}{K}\\
+    % =&\frac{\Omega^2}{K}\,\left[  4\,\frac{\Omega^2}{K}\,\tilde{y}^3-6\,\frac{\Omega^2}{K}\,\tilde{y}^2+\left( 2\,\frac{\Omega^2}{K}+2\,\frac{\Omega^2}{K}\,\frac{1}{\Omega^2}-2 \right)\,\tilde{y}+1 \right]
+\end{align*}
+
+So plugging the found result into the equation for the derivative of $m^*$ yields
+\begin{align*}
+    \frac{2\,\left[(1+\frac{1}{2\Omega^2})\,\tilde{y}+\tilde{y}^3-2\,\tilde{y}^2\right]^2}{\tilde{y}-1}\,\frac{\partial m^*}{\partial\tilde{y}}=&2\,(\tilde{y}-1)\,\tilde{y}^3-3\,(\tilde{y}-1)\,\tilde{y}^2\\
+    &+\left( \tilde{y}-1+(\tilde{y}-1)\,\frac{1}{\Omega^2}-2\,\left((1+\frac{1}{2\Omega^2})\,\tilde{y}+\tilde{y}^3-2\,\tilde{y}^2\right) \right)\,\tilde{y}\\
+    &+(1+\frac{1}{2\Omega^2})\,\tilde{y}+\tilde{y}^3-2\,\tilde{y}^2 \\\\
+    =&3\,\tilde{y}^2+\left( -(1+\frac{1}{\Omega^2})-\tilde{y}\right)\,\tilde{y}+(1+\frac{1}{2\Omega^2})\,\tilde{y}-2\,\tilde{y}^2\\
+    =&-\frac{1}{2\Omega^2}\,\tilde{y}\\\\
+    \Rightarrow\quad\frac{\partial m^*}{\partial\tilde{y}}=&-\frac{\tilde{y}-1}{2\,\left[(1+\frac{1}{2\Omega^2})\,\tilde{y}+\tilde{y}^3-2\,\tilde{y}^2\right]^2}\,\frac{1}{2\Omega^2}\,\tilde{y}
+\end{align*}
+
+
+
+% \\\\
 
 The other two eigenvalues are defined through the solution of the following equation
 \begin{align*}
