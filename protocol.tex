@@ -53,6 +53,9 @@
 \newcommand{\dt}{\frac{\text{d}}{\text{d}t}}
 \newcommand{\tk}{\tilde{\kappa}}
 \newcommand{\tw}{\tilde{\omega}}
+\newcommand{\dkw}{\left(\frac{\text{d}}{\text{d}\tilde{y}}\,\frac{\Omega^2}{K}\right)}
+\newcommand{\kw}{\frac{\Omega^2}{K}}
+\newcommand{\ty}{\tilde{y}}
 \maketitle
 \section*{Mean field considerations}
 \subsection*{Deriving the ME from CM}
@@ -1052,25 +1055,66 @@ Now I set $\Omega^2/K$ through the determining equation for $m_y$.
 This equation looks at first strange, because $k/2\Omega^2$ could be negative for $0<\tilde{y}<1$. But as we've already seen in \autoref{fig:sign_lam1}, this space is free of fixed points. \\\\
 Taking the derivative of $m^*$
 \begin{align*}
-    \frac{\partial m^*}{\partial\tilde{y}}=&-2\,\left(\frac{\Omega^2}{K}\,(2\tilde{y}-1)+\left(\frac{\text{d}}{\text{d}\tilde{y}}\,\frac{\Omega^2}{K}\right)\,(\tilde{y}^2-\tilde{y})\right)\,\left( \half-\frac{\Omega^2}{K}\,\left( \tilde{y}^2- \tilde{y} \right) \right)+2\,\frac{\Omega^2}{K^2}\,\tilde{y}+2\,\left(\frac{\text{d}}{\text{d}\tilde{y}}\,\frac{\Omega^2}{K}\right)\,\frac{\Omega^2}{K}\,\frac{1}{\Omega^2}\,\tilde{y}^2\\
-    % =&4\,(\frac{\Omega^2}{K})^2\,\tilde{y}^3-\left(2\,(\frac{\Omega^2}{K})^2+4\,(\frac{\Omega^2}{K})^2\right)\,\tilde{y}^2+\left( 2\,(\frac{\Omega^2}{K})^2+2\,\frac{\Omega^2}{K^2}-2\,\frac{\Omega^2}{K} \right)\,\tilde{y}+\frac{\Omega^2}{K}\\
-    % =&\frac{\Omega^2}{K}\,\left[  4\,\frac{\Omega^2}{K}\,\tilde{y}^3-6\,\frac{\Omega^2}{K}\,\tilde{y}^2+\left( 2\,\frac{\Omega^2}{K}+2\,\frac{\Omega^2}{K}\,\frac{1}{\Omega^2}-2 \right)\,\tilde{y}+1 \right]
+    \frac{\partial m^*}{\partial\tilde{y}}=&-2\,\left(\frac{\Omega^2}{K}\,(2\tilde{y}-1)+\left(\frac{\text{d}}{\text{d}\tilde{y}}\,\frac{\Omega^2}{K}\right)\,(\tilde{y}^2-\tilde{y})\right)\,\left( \half-\frac{\Omega^2}{K}\,\left( \tilde{y}^2- \tilde{y} \right) \right)+2\,\frac{\Omega^2}{K^2}\,\tilde{y}+2\,\left(\frac{\text{d}}{\text{d}\tilde{y}}\,\frac{\Omega^2}{K}\right)\,\frac{\Omega^2}{K}\,\frac{1}{\Omega^2}\,\tilde{y}^2\\\\
+    =&4\,(\frac{\Omega^2}{K})^2\,\tilde{y}^3-\left(2\,(\frac{\Omega^2}{K})^2+4\,(\frac{\Omega^2}{K})^2\right)\,\tilde{y}^2+\left( 2\,(\frac{\Omega^2}{K})^2+2\,\frac{\Omega^2}{K^2}-2\,\frac{\Omega^2}{K} \right)\,\tilde{y}+\frac{\Omega^2}{K}\\\\
+    &+2\,\dkw\,\kw\,\ty^4-4\,\dkw\,\kw\,\ty^3\\\\
+    &-\left(\dkw-2\,\dkw\,\kw-2\,\dkw\,\kw\,\frac{1}{\Omega^2}\right)\,\ty^2+\dkw\,\ty\\\\
+    =&\frac{\Omega^2}{K}\,\left[  4\,\frac{\Omega^2}{K}\,\tilde{y}^3-6\,\frac{\Omega^2}{K}\,\tilde{y}^2+\left( 2\,\frac{\Omega^2}{K}+2\,\frac{\Omega^2}{K}\,\frac{1}{\Omega^2}-2 \right)\,\tilde{y}+1 \right]\\\\
+    &+\dkw\,\left[2\,\kw\,\ty^4-4\,\kw\,\ty^3-\left(1-2\,\kw-2\,\kw\,\frac{1}{\Omega^2}\right)\,\ty^2+\ty\right]\\\\
+    =&\vcentcolon \frac{\partial \alpha}{\partial\tilde{y}}+\dkw\,\frac{\partial \beta}{\partial\tilde{y}}
 \end{align*}
 
 So plugging the found result into the equation for the derivative of $m^*$ yields
 \begin{align*}
-    \frac{2\,\left[(1+\frac{1}{2\Omega^2})\,\tilde{y}+\tilde{y}^3-2\,\tilde{y}^2\right]^2}{\tilde{y}-1}\,\frac{\partial m^*}{\partial\tilde{y}}=&2\,(\tilde{y}-1)\,\tilde{y}^3-3\,(\tilde{y}-1)\,\tilde{y}^2\\
+    \frac{2\,\left[(1+\frac{1}{2\Omega^2})\,\tilde{y}+\tilde{y}^3-2\,\tilde{y}^2\right]^2}{\tilde{y}-1}\,\frac{\partial \alpha}{\partial\tilde{y}}=&2\,(\tilde{y}-1)\,\tilde{y}^3-3\,(\tilde{y}-1)\,\tilde{y}^2\\
     &+\left( \tilde{y}-1+(\tilde{y}-1)\,\frac{1}{\Omega^2}-2\,\left((1+\frac{1}{2\Omega^2})\,\tilde{y}+\tilde{y}^3-2\,\tilde{y}^2\right) \right)\,\tilde{y}\\
     &+(1+\frac{1}{2\Omega^2})\,\tilde{y}+\tilde{y}^3-2\,\tilde{y}^2 \\\\
     =&3\,\tilde{y}^2+\left( -(1+\frac{1}{\Omega^2})-\tilde{y}\right)\,\tilde{y}+(1+\frac{1}{2\Omega^2})\,\tilde{y}-2\,\tilde{y}^2\\
     =&-\frac{1}{2\Omega^2}\,\tilde{y}\\\\
-    \Rightarrow\quad\frac{\partial m^*}{\partial\tilde{y}}=&-\frac{\tilde{y}-1}{2\,\left[(1+\frac{1}{2\Omega^2})\,\tilde{y}+\tilde{y}^3-2\,\tilde{y}^2\right]^2}\,\frac{1}{2\Omega^2}\,\tilde{y}
+    \Rightarrow\quad\frac{\partial \alpha}{\partial\tilde{y}}=&-\frac{\tilde{y}-1}{2\,\left[(1+\frac{1}{2\Omega^2})\,\tilde{y}+\tilde{y}^3-2\,\tilde{y}^2\right]^2}\,\frac{1}{2\Omega^2}\,\tilde{y}
 \end{align*}
-
-
-
-% \\\\
-
+Doing the same for the $\beta$-expression
+\begin{align*}
+    \left[(1+\frac{1}{2\Omega^2})\,\tilde{y}+\tilde{y}^3-2\,\tilde{y}^2\right]\,\frac{\partial \beta}{\partial\tilde{y}}=&(\ty-1)\,\ty^4-2\,(\ty-1)\,\ty^3-\left( (1+\frac{1}{2\Omega^2})\,\tilde{y}+\tilde{y}^3-2\,\tilde{y}^2-\ty+1-(\ty-1)\,\frac{1}{\Omega^2} \right)\,\ty^2\\
+    &+((1+\frac{1}{2\Omega^2})\,\tilde{y}+\tilde{y}^3-2\,\tilde{y}^2)\,\ty\\
+    =&-\left( 1+\frac{1}{\Omega^2}-\frac{1}{2\Omega^2}\,\ty  \right)\,\ty^2+(1+\frac{1}{2\Omega^2})\,\tilde{y}^2\\
+    =&\frac{1}{2\Omega^2}\,(\ty^3-\ty^2)=\frac{1}{2\Omega^2}\,\ty^2\,(\ty-1)
+\end{align*}
+Collecting the terms together, it is found
+\begin{align*}
+    \frac{\partial \alpha}{\partial\tilde{y}}+\dkw\,\frac{\partial \beta}{\partial\tilde{y}}=&-\frac{\frac{1}{2\Omega^2}\,(\tilde{y}-1)}{2\,\left[(1+\frac{1}{2\Omega^2})\,\tilde{y}+\tilde{y}^3-2\,\tilde{y}^2\right]^3}\,\left( \ty\,((1+\frac{1}{2\Omega^2})\,\tilde{y}+\tilde{y}^3-2\,\tilde{y}^2) -\ty^2\,(1+\frac{1}{2\Omega^2}-4\,\tilde{y}+5\,\tilde{y}^2-2\,\tilde{y}^3)\right)\\
+    =&-\frac{\frac{1}{2\Omega^2}\,(\tilde{y}-1)}{2\,\left[(1+\frac{1}{2\Omega^2})\,\tilde{y}+\tilde{y}^3-2\,\tilde{y}^2\right]^3}\,\left( 2\,\ty^5-4\,\ty^4+2\,\ty^3 \right)\\
+    =&-\frac{\frac{1}{2\Omega^2}\,(\tilde{y}-1)}{2\,\left[(1+\frac{1}{2\Omega^2})+\tilde{y}^2-2\,\tilde{y}\right]^3}\,\left( 2\,\ty^2-4\,\ty+2 \right)
+\end{align*}
+We can examine the roots of the two quadratic polynomials in numerator and denominater
+\begin{align*}
+    2\,\ty^2-4\,\ty+2\rightarrow\text{roots}=&\frac{1}{4}\,(4\pm\sqrt{16-16})\\
+    =&1\\
+    \Rightarrow\quad 2\,\ty^2-4\,\ty+2=&2\,(\ty-1)^2\\
+    (1+\frac{1}{2\Omega^2})+\tilde{y}^2-2\,\tilde{y}\rightarrow\text{roots}=&\half\,(2\pm\sqrt{4-4\,(1+\,\frac{1}{2\Omega^2})})\\
+    =&2\pm\sqrt{-\frac{1}{2\Omega^2}}
+\end{align*}
+So the denominator is always larger then zero
+\begin{align*}
+    \frac{\partial m^*}{\partial\tilde{y}}=&-\frac{\frac{1}{2\Omega^2}\,(\tilde{y}-1)^3}{\left[(1+\frac{1}{2\Omega^2})+\tilde{y}^2-2\,\tilde{y}\right]^3}
+\end{align*}
+We see here that $\partial_{\ty}\,m^*>0$ for $\ty<1$ and $\partial_{\ty}\,m^*<0$ for $\ty>1$. So for the two areas in which $\ty$ can fall, for the one smaller than zero $m^*$ takes it's maximum for $\ty\rightarrow0$ and for the area $\ty>1$ $m^*$ takes it's maximum for $\ty\rightarrow1$. Looking again of the form of $|m|$ 
+\begin{align*}
+    |m|\leq m^*\left( \half-\frac{\Omega^2}{K}\,\left( \tilde{y}^2- \tilde{y} \right) \right)^2+\frac{\Omega^2}{K^2}\,\tilde{y}^2
+\end{align*}
+we can say $m^*(\ty\rightarrow0)=1/4$. The limit of $\ty\rightarrow1$ can only be achieved in the limit $\Omega\rightarrow\infty$, i.e. $\omega\rightarrow\infty$ or $\Gamma\rightarrow0$. Considering the original equation for $y$
+\begin{align*}
+    0=-\frac{\omega\Gamma}{2}-\half\,\Gamma\,(\Gamma+\gamma-\kappa)\,y-\kappa^2\,y^3+2\,\omega\kappa\,y^2-\omega^2\,y
+\end{align*}
+we see in the case of $\omega\rightarrow\infty$ that only
+\begin{align*}
+    \omega^2\,y=0
+\end{align*}
+dominates, infering $m_y\rightarrow0$, which means $|m|\rightarrow1/4$. In the case $\Gamma\rightarrow0$
+\begin{align*}
+    -\kappa^2\,y^3+2\,\omega\kappa\,y^2-\omega^2\,y
+\end{align*}
+dominates. \\\\
 The other two eigenvalues are defined through the solution of the following equation
 \begin{align*}
     0&=t^2+\left( 2\,\frac{\Gamma^2}{\tilde{\omega}^2}+\Gamma\,\tilde{A}+3\,\tilde{y}^2-4\,\tilde{y}+1  \right)\,t+2\,\frac{\Gamma^2}{\tilde{\omega}^2}\,\left( \Gamma\,\tilde{A}+3\,\tilde{y}^2-4\,\tilde{y}+1 \right)+2\,\frac{\Gamma^2}{\tilde{\kappa}^2}\,(2\,\tilde{y}-\frac{\tilde{\kappa}}{\tilde{\omega}})\,(\tilde{y}-\frac{\tilde{\kappa}}{\tilde{\omega}})\\
