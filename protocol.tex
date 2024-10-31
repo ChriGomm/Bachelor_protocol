@@ -1098,23 +1098,36 @@ So the denominator is always larger then zero
 \begin{align*}
     \frac{\partial m^*}{\partial\tilde{y}}=&-\frac{\frac{1}{2\Omega^2}\,(\tilde{y}-1)^3}{\left[(1+\frac{1}{2\Omega^2})+\tilde{y}^2-2\,\tilde{y}\right]^3}
 \end{align*}
-We see here that $\partial_{\ty}\,m^*>0$ for $\ty<1$ and $\partial_{\ty}\,m^*<0$ for $\ty>1$. So for the two areas in which $\ty$ can fall, for the one smaller than zero $m^*$ takes it's maximum for $\ty\rightarrow0$ and for the area $\ty>1$ $m^*$ takes it's maximum for $\ty\rightarrow1$. Looking again of the form of $|m|$ 
+We see here that $\partial_{\ty}\,m^*>0$ for $\ty<1$ and $\partial_{\ty}\,m^*<0$ for $\ty>1$. So for the two areas in which $\ty$ can fall, for the one smaller than zero $m^*$ takes it's maximum for $\ty\rightarrow0$ and for the area $\ty>1$ $m^*$ takes it's maximum for $\ty\rightarrow1$. Looking again of the form of $|m|^2$ 
 \begin{align*}
-    |m|\leq m^*\left( \half-\frac{\Omega^2}{K}\,\left( \tilde{y}^2- \tilde{y} \right) \right)^2+\frac{\Omega^2}{K^2}\,\tilde{y}^2
+    |m|^2\leq m^*\left( \half-\frac{\Omega^2}{K}\,\left( \tilde{y}^2- \tilde{y} \right) \right)^2+\frac{\Omega^2}{K^2}\,\tilde{y}^2
 \end{align*}
-we can say $m^*(\ty\rightarrow0)=1/4$. The limit of $\ty\rightarrow1$ can only be achieved in the limit $\Omega\rightarrow\infty$, i.e. $\omega\rightarrow\infty$ or $\Gamma\rightarrow0$. Considering the original equation for $y$
+we can say $m^*(\ty\rightarrow0)=1/4$. The limit of $\ty\rightarrow1$ can only be achieved in the limit $\Omega\rightarrow\infty$, while% i.e. $\Gamma/\omega^2\rightarrow0$, while
 \begin{align*}
-    0=-\frac{\omega\Gamma}{2}-\half\,\Gamma\,(\Gamma+\gamma-\kappa)\,y-\kappa^2\,y^3+2\,\omega\kappa\,y^2-\omega^2\,y
+    \text{constant}=\frac{K}{\Omega^2}=\frac{\kappa\Gamma}{\omega^2}
 \end{align*}
-we see in the case of $\omega\rightarrow\infty$ that only
-\begin{align*}
-    \omega^2\,y=0
-\end{align*}
-dominates, infering $m_y\rightarrow0$, which means $|m|\rightarrow1/4$. In the case $\Gamma\rightarrow0$
-\begin{align*}
-    -\kappa^2\,y^3+2\,\omega\kappa\,y^2-\omega^2\,y
-\end{align*}
-dominates. \\\\
+This means in particular, that also $K\rightarrow\infty$ and therefore $K^2/\Omega^2\rightarrow\infty$. But this fixes $|m|$ to $1/2$. 
+\begin{figure}[H]
+    \hspace*{-1cm}
+    \includegraphics{pictures/fixp_boundaries.pdf}
+    \caption{This graphic showes the range of $m_y$, $m_z$, $|m|$ for a parameter grid of $1.2\leq\kappa\leq24$ and $3\cdot10^{-7}\leq\omega\leq7$, $\Gamma=1$ $\gamma=0.2$. In the left column (a-d) the fixed points are shown in the $y-z$-plane, whereas in the right column (e-h) the modulus of the total angular momentum is depectid in dependence of $m_y$ for the different parameter values. The first row shows the fixed point in the parameter regime, where there is only one fixed point. From the 2. row downwards the fixed points in the area of three stationary solutions are show in the order smallest, middle and largest $m_y$-value.}
+\end{figure}
+% I address the limit to which $y$ tends by working with the original equation
+% \begin{align*}
+%     0=-\frac{\omega\Gamma}{2}-\half\,\Gamma\,(\Gamma+\gamma-\kappa)\,y-\kappa^2\,y^3+2\,\omega\kappa\,y^2-\omega^2\,y
+% \end{align*}
+% First the case $\omega\rightarrow\infty$ is considered. There we have to possibilities to assure the $\chi$ is constant 
+% \begin{align*}
+%     1.\quad 
+% \end{align*}
+% \begin{align*}
+%     \omega^2\,y=0
+% \end{align*}
+% dominates, infering $m_y\rightarrow0$, which means $|m|\rightarrow1/2$. In the case $\Gamma\rightarrow0$
+% \begin{align*}
+%     -\kappa^2\,y^3+2\,\omega\kappa\,y^2-\omega^2\,y
+% \end{align*}
+% dominates. \\\\
 The other two eigenvalues are defined through the solution of the following equation
 \begin{align*}
     0&=t^2+\left( 2\,\frac{\Gamma^2}{\tilde{\omega}^2}+\Gamma\,\tilde{A}+3\,\tilde{y}^2-4\,\tilde{y}+1  \right)\,t+2\,\frac{\Gamma^2}{\tilde{\omega}^2}\,\left( \Gamma\,\tilde{A}+3\,\tilde{y}^2-4\,\tilde{y}+1 \right)+2\,\frac{\Gamma^2}{\tilde{\kappa}^2}\,(2\,\tilde{y}-\frac{\tilde{\kappa}}{\tilde{\omega}})\,(\tilde{y}-\frac{\tilde{\kappa}}{\tilde{\omega}})\\
