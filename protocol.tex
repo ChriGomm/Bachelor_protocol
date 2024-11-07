@@ -1135,7 +1135,7 @@ This means in particular, that also $K\rightarrow\infty$ and therefore $K^2/\Ome
 %     -\kappa^2\,y^3+2\,\omega\kappa\,y^2-\omega^2\,y
 % \end{align*}
 % dominates. \\\\
-\begin{wrapfigure}[15]{l}{0pt}
+\begin{wrapfigure}[22]{l}{0pt}
     \includegraphics{pictures/fixp_bound_heatmap_s.png}
     \vspace*{-2cm}\caption{Heatmap for the possible fixed point values for the small $m_y$-solution. (a) depicts $m_y$, whereas (b) depicts $|m|$-values.}
     \label{fig:fixp_small_bound_hm}
@@ -1145,10 +1145,21 @@ This means in particular, that also $K\rightarrow\infty$ and therefore $K^2/\Ome
 %     \caption{l}
 % \end{figure*}
 As seen in \autoref{fig:fixp_midlarge_bound_hm} and \autoref{fig:fixp_small_bound_hm}, the fixed points are constraint to the physically allowed space, where $|m|\leq1/2$. In some cases the the boundary is reached. Especially for the middle $m_y$ fixed point the $|m|$ is big for a wide range of parameters. In the other cases $m_y$ goes to zero for $\kappa,\,\omega\rightarrow0$. As $$m_z(m_y\rightarrow0)\rightarrow1/2\quad,$$
-the total collective spin reaches it's boundies in this limit as well. The $m_y=0$ column in the plot for the smallest $m_y$-fixed points stems from the fact that for $\omega=0$ $m_y=0$ is a solution to the stationary problem. \newpage
+the total collective spin reaches it's boundies in this limit as well. The $m_y=0$ column in the plot for the smallest $m_y$-fixed points stems from the fact that for $\omega=0$ and $A>0$ (i.e $\kappa<\Gamma+\gamma$) $m_y=0$ is the only solution to the stationary problem. Notice that the solutions for $m_y$ in these plots are determined as roots of a more original $F$, namly the polynomial
+\begin{align*}
+    F(y)=&-\half\,\Gamma\omega-(\half\,\Gamma\,(\Gamma+\gamma-\kappa)+\omega^2)\,y\\=&-\kappa^2\,y^3+2\,\kappa\omega\,y^2
+\end{align*}
+was used in order to avoid unnecessary pols.\newpage
+\begin{wrapfigure}[26]{l}{0pt}
+    \includegraphics{pictures/lam2_anal_s.png}
+    \vspace*{-2cm}\caption{Heatmap for the possible fixed point values for the small $m_y$-solution. (a) depicts $m_y$, whereas (b) depicts $|m|$-values.}
+    \label{fig:sign_lam23_s}
+\end{wrapfigure}
 The other two eigenvalues are defined through the solution of the following equation
 \begin{align*}
-    0&=t^2+\left( 2\,\frac{\Gamma^2}{\tilde{\omega}^2}+\Gamma\,\tilde{A}+3\,\tilde{y}^2-4\,\tilde{y}+1  \right)\,t+2\,\frac{\Gamma^2}{\tilde{\omega}^2}\,\left( \Gamma\,\tilde{A}+3\,\tilde{y}^2-4\,\tilde{y}+1 \right)+2\,\frac{\Gamma^2}{\tilde{\kappa}^2}\,(2\,\tilde{y}-\frac{\tilde{\kappa}}{\tilde{\omega}})\,(\tilde{y}-\frac{\tilde{\kappa}}{\tilde{\omega}})\\
+    0=&t^2+\left( 2\,\frac{\Gamma^2}{\tilde{\omega}^2}+\Gamma\,\tilde{A}+3\,\tilde{y}^2-4\,\tilde{y}+1  \right)\,t\\
+    &+2\,\frac{\Gamma^2}{\tilde{\omega}^2}\,\left( \Gamma\,\tilde{A}+3\,\tilde{y}^2-4\,\tilde{y}+1 \right)\\
+    &+2\,\frac{\Gamma^2}{\tilde{\kappa}^2}\,(2\,\tilde{y}-\frac{\tilde{\kappa}}{\tilde{\omega}})\,(\tilde{y}-\frac{\tilde{\kappa}}{\tilde{\omega}})\\
     &=\vcentcolon t^2+p\,t+q
 \end{align*}
 Starting with the analysis of $p$ and rewriting with the new parameters, we find 
@@ -1158,14 +1169,25 @@ Starting with the analysis of $p$ and rewriting with the new parameters, we find
 the roots of this expression, which are maximally apart from each other, are found, when $\Omega\rightarrow\infty$ in the same spirit as above. This yields as roots of $p$
 \begin{align*}
     r_p=&\frac{1}{3}\,\left( 2\pm\sqrt{1+\frac{3}{2}\,\chi-3\,\frac{\Gamma}{\Omega^2\,(\Gamma+\gamma)}} \right)\\
-    \Rightarrow\quad r_p^\text{max}=&\frac{1}{3}\,\left( 2+\sqrt{1+\frac{3}{2}\,\chi} \right)\\
+    r_p^\text{max}=&\frac{1}{3}\,\left( 2+\sqrt{1+\frac{3}{2}\,\chi} \right)\\
     r_p^\text{min}=&\frac{1}{3}\,\left( 2-\sqrt{1+\frac{3}{2}\,\chi} \right)
 \end{align*}
-We can recognize, that $r_p^\text{max}=\tilde{u}_\text{max}$ and $r_p^\text{min}=\tilde{u}_\text{min}$. Thus we can infer that for the bracketing fixed points $p$ is always positive, whereas for the middle fixed point we can't make this statement.
+We can recognize, that $r_p^\text{max}=\tilde{u}_\text{max}$ and $r_p^\text{min}=\tilde{u}_\text{min}$. Thus we can infer that for the bracketing fixed points $p$ is always positive, whereas for the middle fixed point we can't make this statement.\\\\
+This information is retrieved by numerical solution of the roots. The eigenvalues can be calculated via the expression
+\begin{align*}
+    \lambda_{23}=&\half\,(-p\pm\sqrt{p^2-4q})\quad.
+\end{align*}
+If the eigenvalues become a complex number, it allows, that the solution of the full Dynamics have oscillating character near those fixed point. Complex eigenvalues are reached when the inside of the square root becomes negative. We define
+\begin{align*}
+    \tilde{q}\vcentcolon=p^2-4q\quad.
+\end{align*}
+To describe the properties of the fixed points we investigate three values $p$, $q$ and $\tilde{q}$. As already mentioned a negative $\tilde{q}$ signals complex eigenvalues. In this case $-p$ is the real part of the eigenvalue. On the other hand when $q$ gets negative the eigenvalues $\lambda_2$ and $\lambda_3$ have different signs, whereas when $q\geq0$ the eigenvalues $\lambda_{23}$ have always the oposite sign of $p$
+
+
 
 \begin{figure*}
     \centering
-    \includegraphics{pictures/lam2_anal.png}
+    \includegraphics{pictures/lam2_anal_ml.png}
     \caption{The yellow line signals in each plot the border between the area with one vs. more than one fix points. Above the line there is only one fixed point. The figures a-c present the sign of the interior of the square root for the eigenvalues $\lambda_{23}$ for different parameter configurations-in the lower segment of the plots for the fixed point specified int the subcaption, in the upper segment for the only fixed point, which is why the plots look the same in this part. Figures d-f show in the same manner the sign of $p$. In the entire setup is $\Gamma=1$ and $\gamma=0.2$ fixed.}
 \end{figure*}
 
