@@ -800,7 +800,7 @@ The linear expansion thus reads
          \delta m_z
     \end{array}\right)=&\left( \begin{array}{ccc}
         -\Gamma\,A-y^2+y&  0 & 0\\
-        0 & -\Gamma\,A-3\,y^2+4\,y-1 & \sqrt{2}\,\frac{\Gamma}{\tilde{\kappa}}\,(y-1)\\
+        0 & -\Gamma\,A-y^2+y & \sqrt{2}\,\frac{\Gamma}{\tilde{\kappa}}\,(y-1)\\
         0 &  -\sqrt{2}\,\frac{\Gamma}{\tilde{\kappa}}\,(2\,y-1) & -2\,\frac{\Gamma^2}{\tilde{\kappa}^2}
     \end{array} \right)\,\left(\begin{array}{c}
          \delta m_x\\
@@ -814,7 +814,7 @@ The eigenvalues of this matrix are
 \end{align*}
 and the solutions of the equation
 \begin{align*}
-    t^2+\left( 2\,\frac{\Gamma^2}{\tilde{\kappa}^2}+\Gamma\,A+3\,y^2-4\,y+1  \right)\,t+2\,\frac{\Gamma^2}{\tilde{\kappa}^2}\,\left( \Gamma\,A+3\,y^2-4\,y+1 \right)+2\,\frac{\Gamma^2}{\tilde{\kappa}^2}\,(2\,y-1)\,(y-1)
+    t^2+\left( 2\,\frac{\Gamma^2}{\tilde{\kappa}^2}+\Gamma\,A+y^2-y  \right)\,t+2\,\frac{\Gamma^2}{\tilde{\kappa}^2}\,\left( \Gamma\,A+y^2-y   \right)+2\,\frac{\Gamma^2}{\tilde{\kappa}^2}\,(2\,y-1)\,(y-1)
 \end{align*}
 Let's get some intuition for what the polynomials involved in these expressions can do. First take a look on the equation for y. The polynomial of third degree can have at most two extrema. The derivative of the equation, which determines $y$, with respect to $y$ reads
 \begin{align*}
@@ -995,7 +995,7 @@ We proceed again by calculating the linear expansion of the differential equatio
          \delta m_z
     \end{array}\right)=&\left( \begin{array}{ccc}
         -\Gamma\,A-y^2+\frac{\tilde{\omega}}{\tilde{\kappa}}\,y&  0 & 0\\
-        0 & -\Gamma\,A-3\,y^2+4\,\frac{\tilde{\omega}}{\tilde{\kappa}}\,y-\frac{\tilde{\omega}^2}{\tilde{\kappa}^2} & \sqrt{2}\,\frac{\Gamma}{\tilde{\kappa}^2}\,(\tilde{\kappa}\,y-\tilde{\omega})\\
+        0 & -\Gamma\,A-y^2+\frac{\tilde{\omega}}{\tilde{\kappa}}\,y & \sqrt{2}\,\frac{\Gamma}{\tilde{\kappa}^2}\,(\tilde{\kappa}\,y-\tilde{\omega})\\
         0 &  -\sqrt{2}\,\frac{\Gamma}{\tilde{\kappa}^2}\,(2\tilde{\kappa}\,y-\tilde{\omega}) & -2\,\frac{\Gamma^2}{\tilde{\kappa}^2}
     \end{array} \right)\,\left(\begin{array}{c}
          \delta m_x\\
@@ -1007,7 +1007,7 @@ For the analysis of the sign of the eigenvalues we are free to multiply the matr
 \begin{align*}
     \mathcal{A}=\left( \begin{array}{ccc}
         -\Gamma\tilde{A}-\tilde{y}^2+\tilde{y}&  0 & 0\\
-        0 & -\Gamma\tilde{A}-3\,\tilde{y}^2+4\,\tilde{y}-1 & \sqrt{2}\,\Gamma/\tilde{\kappa}\,(\tilde{y}-\frac{\tilde{\kappa}}{\tilde{\omega}})\\
+        0 & -\Gamma\tilde{A}-\tilde{y}^2+\tilde{y}& \sqrt{2}\,\Gamma/\tilde{\kappa}\,(\tilde{y}-\frac{\tilde{\kappa}}{\tilde{\omega}})\\
         0 &  -\sqrt{2}\,\Gamma/\tilde{\kappa}\,(2\,\tilde{y}-\frac{\tilde{\kappa}}{\tilde{\omega}}) & -2\,\frac{\Gamma^2}{\tilde{\omega}^2}
     \end{array} \right)
 \end{align*}
@@ -1150,15 +1150,34 @@ the total collective spin reaches it's boundies in this limit as well. The $m_y=
     F(y)=&-\half\,\Gamma\omega-(\half\,\Gamma\,(\Gamma+\gamma-\kappa)+\omega^2)\,y\\=&-\kappa^2\,y^3+2\,\kappa\omega\,y^2
 \end{align*}
 was used in order to avoid unnecessary pols.\newpage
+The other two eigenvalues of the linearization matrix 
+\begin{align*}
+    \Gamma\,\mathcal{A}=&\left( \begin{array}{c c c}
+        -\half\,\Gamma\,(\Gamma+\gamma-\kappa)-\kappa^2\,y^2
+        +\omega\kappa\,y&0&0\\
+        0&-\half\,\Gamma\,(\Gamma+\gamma-\kappa)-\kappa^2\,y^2
+        +\omega\kappa\,y&\Gamma\,(\kappa\,y-\omega)\\
+        0&-\Gamma\,(2\kappa\,y-\omega)&-\Gamma^2
+    \end{array}  \right)
+\end{align*}
 \begin{wrapfigure}[26]{l}{0pt}
     \includegraphics{pictures/lam2_anal_s.png}
     \vspace*{-2cm}\caption{Heatmap for the possible fixed point values for the small $m_y$-solution. (a) depicts $m_y$, whereas (b) depicts $|m|$-values.}
     \label{fig:sign_lam23_s}
 \end{wrapfigure}
-The other two eigenvalues are defined through the solution of the following equation
+are, as discussed above, the t-roots of the expression
+are, as discussed above, the t-roots of the expression
 \begin{align*}
-    0=&t^2+\left( 2\,\frac{\Gamma^2}{\tilde{\omega}^2}+\Gamma\,\tilde{A}+3\,\tilde{y}^2-4\,\tilde{y}+1  \right)\,t\\
-    &+2\,\frac{\Gamma^2}{\tilde{\omega}^2}\,\left( \Gamma\,\tilde{A}+3\,\tilde{y}^2-4\,\tilde{y}+1 \right)\\
+    0=&t^2+\left( \Gamma^2 +\half\,\Gamma\,(\Gamma+\gamma-\kappa)+\kappa^2\,y^2
+    -\omega\kappa\,y\right)\,t\\
+    &+\Gamma^2\,(\half\,\Gamma\,(\Gamma+\gamma-\kappa)+\kappa^2\,y^2-\omega\kappa\,y)\\
+    &+\Gamma^2\,(\kappa\,y-\omega)\,(2\,\kappa\,y-\omega)
+    &=\vcentcolon t^2+p\,t+q
+\end{align*}
+or
+\begin{align*}
+    0=&t^2+\left( 2\,\frac{\Gamma^2}{\tilde{\omega}^2}+\Gamma\tilde{A}+\tilde{y}^2-\tilde{y} \right)\,t\\
+    &+2\,\frac{\Gamma^2}{\tilde{\omega}^2}\,\left( \Gamma\tilde{A}+\tilde{y}^2-\tilde{y} \right)\\
     &+2\,\frac{\Gamma^2}{\tilde{\kappa}^2}\,(2\,\tilde{y}-\frac{\tilde{\kappa}}{\tilde{\omega}})\,(\tilde{y}-\frac{\tilde{\kappa}}{\tilde{\omega}})\\
     &=\vcentcolon t^2+p\,t+q
 \end{align*}
