@@ -1204,13 +1204,32 @@ To describe the properties of the fixed points we investigate three values $p$, 
 
 
 
-\begin{figure*}
+\begin{figure}[H]
     \centering
     \includegraphics{pictures/lam2_anal_ml.png}
     \caption{The yellow line signals in each plot the border between the area with one vs. more than one fix points. Above the line there is only one fixed point. The figures a-c present the sign of the interior of the square root for the eigenvalues $\lambda_{23}$ for different parameter configurations-in the lower segment of the plots for the fixed point specified int the subcaption, in the upper segment for the only fixed point, which is why the plots look the same in this part. Figures d-f show in the same manner the sign of $p$. In the entire setup is $\Gamma=1$ and $\gamma=0.2$ fixed.}
-\end{figure*}
-
-
+\end{figure}
+\newpage
+After completed the discussion for $\delta=0$ we can choose non-zero $\delta$. In this discussion we rely on numerical calculation for our examinations, because of the complexity of the equation. The strategy for analysing this parameter regime stays the same. I determine the roots of the equations
+\begin{align*}
+    -\Gamma\delta\,m_y-\Gamma\,(\gamma+\Gamma-\kappa)\,m_x-2\,\kappa^2\,m_x\,( m_x^2+ m_y^2)+2\,\kappa\omega\,m_xm_y  &=0\\\\
+    \Gamma\delta\,m_x-\omega\Gamma-\Gamma\,(\gamma+\Gamma-\kappa)\,m_y-2\,\omega^2\,m_y&\\
+    -2\,\kappa^2\,m_y\,( m_x^2+ m_y^2)+2\,\kappa\omega\,(m_x^2+2\,m_y^2)  &=0
+\end{align*}
+This I did by solving the first equation for y and plugging the result into the second equation. Then I divided the x-axis into a grid and searched bewtween the gridpoints for roots in order find all of the fixed points.
+\begin{figure}[H]
+    % \vspace*{-1cm}
+    \hspace*{-1.2cm}
+    \includegraphics{pictures/numb_of_fixp.png}
+    \caption{The blue filled region has 3 fixed points, whereas the rest of the shown parameter space has 1 fixed point. Shown are different views.}
+\end{figure}\newpage
+After obtaining the fixed points I linearized again the differential equation and determined numerically the eigenvalues of the evolving matrix. From the signs of the eigenvalues there can be retrieved information about the stability of the fixed points and therefore the state of the system for long times. In the regions where there is no stable fixed point, one expects in the absense of chaos the existance of a limit cicle, which is also confirmed by integrating the equation of motion for a random sample of paramter specifications.
+\begin{figure}[H]
+    \vspace{-0.35cm}
+    \hspace*{-1.3cm}
+    \includegraphics{pictures/stability_regions.pdf}
+    \caption{In (a) the region is highlighted were there are no stable fixed points. The complement where there is at least ones stable fixed point is shown in (b). In (c) the special parameter areas, are marked where there are 3 fixed points, but none of them is stable. It becomes clear that this is an exception.}
+\end{figure}
 
 
 \newpage
