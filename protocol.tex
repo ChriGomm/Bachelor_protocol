@@ -1216,7 +1216,14 @@ After completed the discussion for $\delta=0$ we can choose non-zero $\delta$. I
     \Gamma\delta\,m_x-\omega\Gamma-\Gamma\,(\gamma+\Gamma-\kappa)\,m_y-2\,\omega^2\,m_y&\\
     -2\,\kappa^2\,m_y\,( m_x^2+ m_y^2)+2\,\kappa\omega\,(m_x^2+2\,m_y^2)  &=0
 \end{align*}
-This I did by solving the first equation for y and plugging the result into the second equation. Then I divided the x-axis into a grid and searched bewtween the gridpoints for roots in order find all of the fixed points.
+If we multiply the first equation by $m_y$ and the second by $m_x$ and subtract the two equations from each other we get
+\begin{align*}
+    -\Gamma\delta\,(m_x^2+m_y^2)+\Gamma\omega\,m_x+2\,\omega^2\,m_xm_y-2\,\kappa\omega\,m_x\,(m_x^2+m_y^2)
+\end{align*}
+By solving this equation for $m_y$ and plugging the result into the second equation, one has two find a root of a one variable function. Then I divided the x-axis into a grid and searched bewtween the gridpoints for roots in order find all of the fixed points.
+\begin{align*}
+    m_{y,12}(m_x)=\frac{1}{\Gamma\delta+2\,\kappa\omega\,m_x}\,\left( \omega^2\,m_x\pm \sqrt{\omega^4\,m_x^2-(\Gamma\delta+2\,\kappa\omega\,m_x)\,[(\Gamma\delta+2\,\kappa\omega\,m_x)\,m_x^2-\Gamma\omega\,m_x]} \right)
+\end{align*}
 \begin{figure}[H]
     % \vspace*{-1cm}
     \hspace*{-1.2cm}
@@ -1224,13 +1231,43 @@ This I did by solving the first equation for y and plugging the result into the 
     \caption{The blue filled region has 3 fixed points, whereas the rest of the shown parameter space has 1 fixed point. Shown are different views.}
 \end{figure}\newpage
 After obtaining the fixed points I linearized again the differential equation and determined numerically the eigenvalues of the evolving matrix. From the signs of the eigenvalues there can be retrieved information about the stability of the fixed points and therefore the state of the system for long times. In the regions where there is no stable fixed point, one expects in the absense of chaos the existance of a limit cicle, which is also confirmed by integrating the equation of motion for a random sample of paramter specifications.
+
+\begin{figure}[H]
+    \vspace{-0.35cm}
+    \hspace*{-1.3cm}
+    \includegraphics{pictures/numb_of_fixp_extended1.png}
+\end{figure}
 \begin{figure}[H]
     \vspace{-0.35cm}
     \hspace*{-1.3cm}
     \includegraphics{pictures/stability_regions.pdf}
     \caption{In (a) the region is highlighted were there are no stable fixed points. The complement where there is at least ones stable fixed point is shown in (b). In (c) the special parameter areas, are marked where there are 3 fixed points, but none of them is stable. It becomes clear that this is an exception.}
 \end{figure}
-
+\begin{figure}[H]
+    \vspace{-0.35cm}
+    \hspace*{-1.3cm}
+    \includegraphics{pictures/numb_of_fixp_extended.png}
+\end{figure}
+\begin{figure}[H]
+    \vspace{-0.35cm}
+    \hspace*{-1.3cm}
+    \includegraphics{pictures/stability_regions_extended.pdf}
+\end{figure}
+\begin{figure}[H]
+    \vspace{-0.35cm}
+    \hspace*{-1.3cm}
+    \includegraphics{pictures/lc_traj_wcut.png}
+\end{figure}
+\begin{wrapfigure}[18]{l}{0pt}
+    \includegraphics{pictures/k_cut_spec_sec.png}
+    \caption{The grid definition in the $\omega$-$\delta$-plane for the special section in the mean $m_z$-component for large times}
+\end{wrapfigure}
+some text
+\begin{figure}[H]
+    \vspace{-0.35cm}
+    \hspace*{-1.3cm}
+    \includegraphics{pictures/lc_traj_kcut.png}
+\end{figure}
 
 \newpage
 \appendix
