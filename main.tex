@@ -196,17 +196,17 @@
 
 %% information for the title page (tp) 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \newcommand{\tpauthorname}{Marcel Cech}
-% \newcommand{\tpsupervisors}{Prof. Dr. Igor Lesanovsky\\ Dr. Federico Carollo}
-% \newcommand{\tpevaluators}{Prof. Dr. Igor Lesanovsky\\ Prof. Dr. Daniel Braun}
-% \newcommand{\tptypeofthesis}{Master Thesis}
-% \newcommand{\tpag}{AG Lesanovsky}
-% \newcommand{\tpinstitute}{Institut f\"{u}r Theoretische Physik}
-% \newcommand{\tpuniversity}{Eberhard-Karls Universit\"{a}t T\"{u}bingen}
-% \newcommand{\tpfaculty}{Mathematisch-Naturwissenschaftliche Fakult\"{a}t}
-% \newcommand{\tpfachbereich}{Fachbereich Physik}
-% \newcommand{\tptitle}{Quantum Simulation of Biased Open-System Dynamics}
-% \newcommand{\tpdate}{June 7., 2023}
+\newcommand{\tpauthorname}{Christian Gommeringer}
+\newcommand{\tpsupervisors}{Dr. Albert Cabot}
+\newcommand{\tpevaluators}{Prof. Dr. Igor Lesanovsky}
+\newcommand{\tptypeofthesis}{Bachelor Thesis}
+\newcommand{\tpag}{AG Lesanovsky}
+\newcommand{\tpinstitute}{Institut f\"{u}r Theoretische Physik}
+\newcommand{\tpuniversity}{Eberhard-Karls Universit\"{a}t T\"{u}bingen}
+\newcommand{\tpfaculty}{Mathematisch-Naturwissenschaftliche Fakult\"{a}t}
+\newcommand{\tpfachbereich}{Fachbereich Physik}
+\newcommand{\tptitle}{Synchronized Time Crystal Phase in a Driven-Dissipative Atomic Ensemble}
+\newcommand{\tpdate}{\today}
 
 
 \newcommand{\half}{\frac{1}{2}}
@@ -223,6 +223,7 @@
 \begin{document}
 
 % \maketitlepage
+% % \makebookcover
 % \setcounter{page}{1}
 % \pagenumbering{roman}
 % \makedeclarationoffidelity
@@ -249,13 +250,33 @@
 
 %\input{content/Deleted.tex}
 % \clearpage
+% \lehead[Introduction]{Introduction}
+% \rohead[Introdduction]{Introduction}
 % \input{chapters/introduction.tex}
 % \newpage
-% \input{chapters/theory.tex}
+% \automark[section]{section}
+% \lehead[\headmark]{\headmark}
+% \rohead[\headmark]{\headmark}
+\input{chapters/theory.tex}
 % \clearpage
-\input{chapters/zero_detuning.tex}
+% \input{chapters/zero_detuning.tex}
 % \clearpage
 % \input{chapters/detuned_case.tex}
+
+% \lehead[Conclusion]{Conclusion}
+% \rohead[Conclusion]{Conclusion}
+% \automark[chapter]{chapter}
+% \input{chapters/conclusion.tex}
+
+% \clearmainofpairofpagestyles
+% \clearplainofpairofpagestyles
+% \clearpairofpagestyles
+
+
+% \automark[section]{section}
+% \lehead[\headmark]{\headmark}
+% \rohead[\headmark]{\headmark}
+% \printbibliography
 % \input{chapters/appendices.tex}
 % \clearpage
 

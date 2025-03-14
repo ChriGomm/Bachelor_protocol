@@ -1,5 +1,6 @@
-\begin{appendices}
-
+% \begin{appendices}
+\appendix
+    \chapter{Appendix for the theoretical framework}
     \section{Derivation of the equations of motion}
     \label{appendix:eqm_derv}
     
@@ -78,9 +79,10 @@
         &=-\frac{\Gamma}{2}\,\sum_{k=1}^N\Trs{\sigma_k^+\rho}
     \end{align*}
     
+    \chapter{Appendix for zero detuning}
     \section{Decay without pumping}
     \label{appendix:msq_calc}
-    In this paragraph I want to discuss, why in the absence of pumping the system always decays to fully mixed state. But first I want to derive a statement, which can be applied to certain driven-dissipative models, as they often encounter a similar form for the squared of their matrix. For this purpose assume that the coupled set of $N$ ordinary differential equations has the solution $\vec{F}:\,\mathbb{R}\rightarrow\mathbb{R}^N$. Define from that the function squared $F^2:\,\mathbb{R}\rightarrow\mathbb{R}:\,t\mapsto\sum_{i=1}^NF_i^2(t)$. The statement is now, that if one is able to write the derivative of the squared function in the following way
+    In this paragraph I want to discuss, why in the absence of pumping the system always decays to fully mixed state. But first I want to derive a statement, which can be applied to certain driven-dissipative models, as they often encounter a similar form of the derivative  for the squared of the total spin. For this purpose assume that the coupled set of $N$ ordinary differential equations has the solution $\vec{F}:\,\mathbb{R}\rightarrow\mathbb{R}^N$. Define from that the function squared $F^2:\,\mathbb{R}\rightarrow\mathbb{R}:\,t\mapsto\sum_{i=1}^NF_i^2(t)$. The statement is now, that if one is able to write the derivative of the squared function in the following way
     \begin{align*}
         \half\,\dt F^2(t)&=\vec{F}^t(t)\,A\,\vec{F}(t)
     \end{align*}
@@ -125,10 +127,14 @@
     \end{align*}
     where $\hat{m}=\vec{m}/|m|$. In order for a vector to be a stationary solution, the derivatives of all spin components as well as the derivative of the total spin have to vanish. The latter condition implies $m_x=m_y=0$ and the combination with $\text{d}m_y/\text{d}t=0$ also demands $m_z=0$. Hence the fully mixed state is the only possible stationary point. Limit cycles can not exist either. This is found true by first noticing, that, because of the negative semi-definiteness of $A$, the total spin cannot grow. Thus in order for the system to have stable oscillations the total spin has to be constant, which implies that again $m_x=m_y=0$ has to hold. But this results in $m_z$ being constant. Hence no stable oscillations can occur.
     \newpage
+
+
+
+
     \section{Modulus of the fixed points in the case $\delta=0$}
     \label{appendix:mod_of_fixp}
-    Here it is shown that all stationary solutions of the equations of motion are in the physically allowed set of values, i.e. $|m|\leq1/2$.
-    The idea of the following analysis is to show first that $|m|$ is monoton in the parameters and then look at the maximum values.
+    Here it is shown that all stationary solutions of the equations of motion without detuning are in the physically allowed set of values, i.e. $|m|\leq1/2$.
+    The idea of the following analysis is to show first that $|m|$ is monoton in the parameters and then look at the maximum values. I begin by getting an expression for the modulus of the total spin.
     
     \begin{align*}
         m_z&=\half-\frac{1}{\Gamma}\,\left( \kappa\,(m_x^2+m_y^2)-\omega m_y  \right)\\
@@ -139,7 +145,7 @@
         \leq&\left( \half-\frac{\Omega^2}{K}\,\left( {y}^2- {y} \right) \right)^2+\frac{\Omega^2}{K^2}\,{y}^2\\
         &=\vcentcolon m^*
     \end{align*}
-    The last definition allows to continue the analysis with only two parameters $K$, $\Omega$. The real magnetic modulus is always smaller than $m^*$. In order to take into account the interdependence of $y$ and the parameters through the determining equation for $y$, I have to express them through each other. 
+    The last definition allows to continue the analysis with only two parameters $K$, $\Omega$. The real magnetic modulus squared is always smaller than $m^*$. In order to take into account the interdependence of $y$ and the parameters through the determining equation for $y$, I have to express them through each other. 
     \begin{align*}
         0&=F(y)=-\frac{K}{2\Omega^2}-\left( \frac{1-K}{2\Omega^2} +1\right)\,{y}-{y}^3+2\,{y}^2\\
         \Rightarrow\quad \frac{K}{2\Omega^2}\,({y}-1)&=(1+\frac{1}{2\Omega^2})\,{y}+{y}^3-2\,{y}^2\\
@@ -202,7 +208,7 @@
         \text{constant}=\frac{K}{\Omega^2}=\frac{\kappa\Gamma}{\omega^2}
     \end{align*}
     This means in particular, that also $K\rightarrow\infty$ and therefore $K^2/\Omega^2\rightarrow\infty$. But this fixes $|m|$ to $1/2$. \\\\
-    The case $y\rightarrow0$ requires $K/2\Omega^2\rightarrow0$. With the use of the theorem over implicit functions [cite theorem], one can calculate the the derivative of $y$ with respect to $K/2\Omega^2=\vcentcolon\tau$, as follows
+    The case $y\rightarrow0$ requires $K/2\Omega^2\rightarrow0$. With the use of the theorem over implicit functions \cite{deitmar_analysis_2021}, one can calculate the the derivative of $y$ with respect to $K/2\Omega^2=\vcentcolon\tau$, as follows
     \begin{align*}
         \frac{\diff y}{\diff\tau}\Big|_{y=0,\,\tau=0}=-\frac{\partial F}{\partial\tau}\Big|_{y=0,\,\tau=0}\,\left(\frac{\partial F}{\partial y}\Big|_{y=0,\,\tau=0}\right)^{-1}=\frac{1}{\frac{1}{2\,\Omega^2}+1}
     \end{align*}
@@ -210,14 +216,14 @@
     \begin{align*}
         F(y)=-\frac{K}{2\Omega^2}-\left( \frac{1-K}{2\Omega^2} +1\right)\,{y}-{y}^3+2\,{y}^2
     \end{align*}
-    With this result, one proceeds by
+    With this result, one is able to compute the fractions $y/\tau$ in the limit $\tau\rightarrow\infty$. One proceeds by
     \begin{align*}
         m^*&=\left( \half- \half\,\frac{1}{\tau}\,(y^2-y) \right)^2+\frac{1}{4\Omega^2}\,\frac{y^2}{\tau^2}\\
         &=\frac{1}{4}\,\left( 1- \frac{1}{\frac{1}{2\Omega^2}+1}\right)^2+\frac{1}{4\Omega^2}\,\frac{1}{\left(\frac{1}{2\Omega^2}+1\right)^2}\\
         &=\left(\frac{1}{4}+\Omega^2\right)\,\frac{1}{\left(\frac{1}{2\Omega^2}+1\right)^2}\\
         &=\frac{1}{4}\,\frac{1+4\,\Omega^2}{1+4\,\Omega^2+4\,\Omega^4}\leq\frac{1}{4}
     \end{align*}
-    Thus also in this case the physical boundary of $|m|$ is not crossed. Drawing the numerically found fixed points in the $yz$-plane, confirms these findings. All stationary points of the mean field equations of motion lie in the physical space.
+    Thus also in this case the physical boundary of $|m|$ is not violated. Drawing the numerically found fixed points in the $yz$-plane, confirms these findings. All stationary points of the mean field equations of motion lie in the physical space.
     \begin{figure}[H]
         \hspace*{-0.4cm}
         \includegraphics{pictures/fixp_boundaries.pdf}
@@ -228,11 +234,11 @@
     
     \section{Linearization eigenvalues for the unstable fixed points in the case $\delta=0$}
     \label{appendix:eig_del0}
-    In this chapter of the appendix the eigenvalues of the linearization matrix for fixed points with middle and largest $y$-value are depicted. They show again their instability.
+    In this section of the appendix the eigenvalues of the linearization matrix for fixed points with middle and largest $y$-value are depicted. They show again their instability.
     \begin{figure}[H]
         \centering
         \includegraphics{pictures/lam_anal_m1.png}
-        \caption{Two of the eigenvalues of the linearization for the middle-$y$ stationary solution.
+        \caption{Real and imaginary part of the two of the eigenvalues of the linearization for the middle-$y$ stationary solution.
         }
     \end{figure}
     
@@ -249,10 +255,10 @@
         }
     \end{figure}
     
-    
+    \chapter{Appendix for the model with detuning}
     \section{Exemplary trajectories}
     \label{appendix:expl_traj}
-    This paragraph shows a few exemplary long-time states of the system for the area where the transition of $m_x$-values is accompanied by multistability. Therefore I reconsider the outstanding regions in \figref{fig:fixedpoint_colormap} of \secref{sec:detuned_analysis}. I divide those regions into 9 parts and select randomly a parameter configuration out of those areas.
+    This paragraph shows a few exemplary long-time states of the system for the area where the transition of $m_x$-values is accompanied by multistability. Therefore I reconsider the outstanding regions in \figref{fig:fixedpoint_colormap} of \secref{sec:detuned_analysis}. I divide those regions into 9 parts and select randomly a parameter configuration out of those areas. For a few random initial conditions I depict the resulting long-time states.
     \begin{figure}[H]
         \centering
         \includegraphics{pictures/combined_spec_sec.png}
@@ -275,21 +281,21 @@
         \centering
         \includegraphics{pictures/lc_traj_dcut2.png}
         \caption{For $\delta=-1.33$ possible long time states are shown for random values from the parameter grid. Where stationary points exist, I also drew the transition from the starting points to the stationary point.}
-    \end{figure}
+    \end{figure}\newpage
 
     \section{Long-time states for varying dephasing strength}\label{app:gamma_analysis}
-    An examination of the long-time states for different $\gamma$-values, which has been omitted in the main text, is briefly carried out at this point. For this purpose I again plot the stationary points as well as the average over period of a limit cycle for different parameter values.
+    An examination of the long-time states for different $\gamma$-values, which has been omitted in the main text, is briefly carried out at this point. For this purpose I again plot the stationary points as well as the average over a period of a limit cycle for different parameter values.
     \begin{figure}[H]
         \centering
         \caption{fixed points and averaged limit cycles over their period. In (a) $\gamma$ and $\delta$ are varied, while the other parameter a kept fixed. In (b) the cut with differing $\omega$ and $\delta$ is repeated for a different $\kappa$ and more importantly a different $\gamma$ value. $\Gamma=1$ as always. The white dashed line separates the region of limit cycles from that where stationary points exist. In both plots the area above the white line is the time crystal phase.}
         \includegraphics{pictures/limit_cycle_mean_gw.png}
         \label{fig:gamma_longtime}
     \end{figure}
-    A several interesting observations can be made. Starting with \figref{fig:gamma_longtime}(b) one can see that the phase separation line has qualitatively the same shape as for $\gamma=0.2$. It again follows the property of synchronization effects that for larger detuning between the considered systems is, the larger the coupling between them has to be, in order to see synchronization. I can also inform the reader that the parameter set that has been chosen in \figref{fig:gamma_longtime}  exhibits no multistability. For all configuration only one limit cycle or one stationary solution exists. \\
-    What can be additionally observed, is that the long-time states show a valley of small $m_x$ values, that lies near the phase separation line but does not coincide with it. \\\\
-    Turning to \figref{fig:gamma_longtime}(a) one finds that the time crystal phase is stable for a wide range of dephasing strength for certain parameter constellations. What is also intriguing is that the higher $\gamma$ is the larger in absolute value has to be the detuning in order to observe a time crystal phase. The form of the phase separation line also suggests that there might be a maximal value of dephasing such that above that value no limit cycles can arise. But this definitively has to be yet verified, what could be an interesting subject of further future analysis.
+    A several interesting observations can be made. Starting with \figref{fig:gamma_longtime}(b) one can see that the phase separation line has qualitatively the same shape as for $\gamma=0.2$. It again follows the property of synchronization effects that the larger the detuning between the considered systems is the larger the coupling between them has to be in order to see synchronization. I can also inform the reader that the parameter set that has been chosen in \figref{fig:gamma_longtime}  exhibits no multistability. For all configuration only one limit cycle or one stationary solution exists. \\
+    What can be additionally observed is that the long-time states show a valley of small $m_x$ values, that lies near the phase separation line but does not coincide with it. \\\\
+    Turning to \figref{fig:gamma_longtime}(a) one finds that the time crystal phase is stable for a wide range of dephasing strength for certain parameter constellations. What is also intriguing is that the higher $\gamma$ is the larger, in absolute value, the detuning has to be in order to observe a time crystal phase. The form of the phase separation line also suggests that there might be a maximal value of dephasing such that above that value no limit cycles can arise. But this definitively has to be yet verified, what could be an interesting subject of future analysis.
 
 
 
 
-\end{appendices}
+% \end{appendices}

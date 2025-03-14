@@ -109,7 +109,7 @@ With the rescaling $\Omega=\tw/\sqrt{2\,\Gamma\,(\Gamma+\gamma)}$ and $K=\tk/(\s
 \end{gather*}
 and thus the problem only depends on two parameters. Now the border between the configurations with different numbers of fixed points can be determined, by numerically meeting the above mentioned condition of a local maximum with $F(y_{12})=0$. To be explicit this is done by calculating the root of $F(y_{12})$ with respect to $K$ for various values of $\Omega$. The result is shown in \figref{fig:numb_fixp}\\\\As known from previous considerations if $y_\text{max}<1$, i.e. $A>0$ which corresponds to $K>1$, the maximum of $F$ is negative even for $B=0$, resulting in only one solution. Another thing can be noted at this point. As $F(0)=-B$ and $B\neq0$ for $\kappa\neq0$, one solution $m_y$ has always to be negative for $\kappa\neq0$.\\\\
 
-As stable fixed points are possible long-time states of the system, it would be possibly problematic, if they lied outside the physically allowed space, meaning $|m|\leq1/2$. Reassuringly this is never the case as I show in \appref{appendix:mod_of_fixp}. Numerical calculations deliver the same result. I want to mention at this point that in all diagrams that are shown in this theses $\Gamma=1$ is chosen. All coupling strengths, i.e. energies, are measured in the units of $\Gamma=1$. %
+As stable fixed points are possible long-time states of the system, it would be possibly problematic, if they lied outside the physically allowed space, meaning $|m|\leq1/2$. Reassuringly this is never the case as I show in \appref{appendix:mod_of_fixp}. Numerical calculations deliver the same result. I want to mention at this point that in all diagrams that are shown in this thesis $\Gamma=1$ is chosen. All coupling strengths, i.e. energies, are measured in the units of $\Gamma=1$. %
 % \begin{wrapfigure}[22]{l}{0pt}
 %     \includegraphics{pictures/fixp_bound_heatmap_s.png}
 %     \vspace*{-2cm}\caption{Heatmap for the possible fixed point values for the small $m_y$-solution. (a) depicts $m_y$, whereas (b) depicts $|m|$-values.}
@@ -124,6 +124,7 @@ As stable fixed points are possible long-time states of the system, it would be 
     %{\label{fig:num_of_fixp_criterium_BF}}
 \end{figure}
 \begin{figure}[H]
+    \vspace*{-0.8cm}
     \hspace*{-1cm}
     \includegraphics{pictures/fixp_bound_heatmap_ml2.png}
     \caption{heatmap of the range of the fixed point for a certain parameter range of $\omega$ and $\kappa$. $\Gamma=1$, $\gamma=0.2$ are fixed. Presented are properties of the middle $m_y$-solutions in diagrams (a-c) and for the larger $m_y$-solution in (d-f).}
@@ -149,7 +150,7 @@ where $D\mathbf{f}|_{\mathbf{x}^*}$ is the Jacobian of $\mathbf{f}$. The emerged
 \begin{align*}
     \delta\mathbf{x}(t)=\delta\mathbf{x}(t=0)\,\exp(\mathcal{C}t)
 \end{align*}
-For a diagonalizable matrix $\mathcal{C}$, $\delta\mathbf{x}$ can be represented in an eigenbasis of $\mathcal{C}$. The component related to a member of the eigenbasis grows or decays exponentially with the according eigenvalue as rate. For a matrix with all negative eigenvalues a small deviation from the stationary point returns back to it, making this fixed point stable. \\If at least one eigenvalue is positive, the region around the stationary point contains an at least one dimensional subspace, for which points lying on this subspace depart from the fixed point with growing time. \\In this scenario, for an implementation of our model to a real physical system, the presence of unavoidable fluctuations would push the collective spin slightly away from the stable subspace, from where it would exponentially depart from the fixed point\cite{strogatz}. Hence fixed points that are not fully stable will not behave as attractors for the collective spin, even in their vicinity. For the case of an eigenvalue getting zero, one has to turn to the next order for an evaluation of the stability.\\\\
+For a diagonalizable matrix $\mathcal{C}$, $\delta\mathbf{x}$ can be represented in an eigenbasis of $\mathcal{C}$. The component related to a member of the eigenbasis grows or decays exponentially with the according eigenvalue as rate. For a matrix with all negative eigenvalues a small deviation from the stationary point returns back to it, making this fixed point stable. \\If at least one eigenvalue is positive, the region around the stationary point contains an at least one dimensional subspace, for which points lying on this subspace depart from the fixed point with growing time. \\In this scenario, for an implementation of our model to a real physical system, the presence of unavoidable fluctuations would push the collective spin slightly away from the stable subspace, from where it would exponentially depart from the fixed point\cite{pikovskij_synchronization_2007}. Hence fixed points that are not fully stable will not behave as attractors for the collective spin, even in their vicinity. For the case of an eigenvalue getting zero, one has to turn to the next order for an evaluation of the stability.\\\\
 % \begin{figure}[H]
 %     \hspace*{-1cm}
 %     \includegraphics{pictures/phaseplot_A_kw.pdf}

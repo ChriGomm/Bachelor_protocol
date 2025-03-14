@@ -71,10 +71,9 @@ The evolution of the system factorizes into consecutive interactions described b
 \end{itemize}
 Notice that those ideas are also related to the Born Markov approximations. The assumption of independent consecutive interactions leans on the assumption of a correlation time of the bath, which is much smaller than the one of the system. Note, that $[a_n,a^\dagger_{n'}]=\delta_{n,n'}$ holds, which strengthens the notion of independent modes.\\\\%, and therefore the modes of different $n$ do not depend on each other, which is important for being able to describe the system via a collision model with collisions with ancillas $n$.
 One has to take into account that for the system, which is considered in this project, local as well as collective interaction is chosen. This also has implications for the correlations between system and bath.
-In order for the spontaneous emission to be collective one has to realize a field that couples to all atoms at once. The temporal and spatial correlation of the field have to reach far enough such that the time between emissions as well as the distance between the atoms is smaller than correlation time and length. \\Local interaction with the field on the other hand demands that the interaction of one atom with the field has no influence on the interaction of another atom with the field. This demands sufficiently small spatial and temporal correlations. Hence the physical implementation of such a system requires experimental tact \cite{diehl_quantum_2008}. It is often realized in optical cavities \cite{}.\\\\%Hence with those two electromagnetic environments one has to find  a sweet spot of the coupling implementations, where both requirements for the different interactions can be satisfied, if one wants to implement a physical system of such character.\\\\
-Having introduced the collision model approach I will now turn to the explanation of the different interaction types. Collective spontaneous and local pumping both result from a dipole interaction of the atom with an electromagnetic field. The property that determines the type of the effect is the state of the field, i.e. the state of the ancilla.\\
-In order to describe spontaneous emission one can choose the initial state of each ancilla as the vacuum state, as for sufficiently low emission rate, such an ancilla only triggers emissions. The treatment of pumping requires the initial ancilla states to be in an excited state. Which exited state is chosen, is not relevant, as the interaction strength can be set through the coefficient of the $H_\text{SpE}$-term. For simplicity I will choose the first exited state of the time-bin modes as initial ancilla state for the pumping process. \\\\
-Following the above derivation the collective spontaneous emission can be build into the Hamiltonian with the following form.
+In order for the spontaneous emission to be collective one has to realize a field that couples to all atoms at once. The temporal and spatial correlation of the field have to reach far enough such that the time between emissions as well as the distance between the atoms is smaller than correlation time and length. \\Local interaction with the field on the other hand demands that the interaction of one atom with the field has no influence on the interaction of another atom with the field. This demands sufficiently small spatial and temporal correlations. Hence the physical implementation of such a system requires experimental tact \cite{diehl_quantum_2008,shaw_multi-ensemble_2024}.\\\\% It is often realized in optical cavities \cite{shaw_multi-ensemble_2024}.\\\\%Hence with those two electromagnetic environments one has to find  a sweet spot of the coupling implementations, where both requirements for the different interactions can be satisfied, if one wants to implement a physical system of such character.\\\\
+Having introduced the collision model approach I will now turn to the explanation of the different interaction types. Collective spontaneous emission results from a dipole interaction of the atom with an electromagnetic field. The property that determines the type of the effect is the state of the field, i.e. the state of the ancilla.\\
+For the description of emission one can choose the initial state of each ancilla as the vacuum state, as for sufficiently low emission rate, such an ancilla only triggers emissions. Following the above derivation the collective spontaneous emission can be build into the Hamiltonian with the following form.
 \begin{align*}
     H_\text{SpE}&=\alpha\,(J_+a + J_-a^\dagger)
 \end{align*}
@@ -82,11 +81,17 @@ $J_\pm$ are the collective spin lowering and rising operators, i.e. the sum of t
 \begin{align*}
     J_\pm=\sum_{i=1}^N\sigma^\pm_i
 \end{align*}
-and $a$, $a^\dagger$ are the bosonic field operators of the collision model. Analogously the local pumping can be introduced as
+and $a$, $a^\dagger$ are the bosonic field operators of the collision model.\\\\
+
+
+The treatment of local pumping requires more care. %the initial ancilla states to be in an excited state.
+Experimentally it can be implemented by applying an excitation scheme that uses different energy levels during the process \cite{meiser_prospects_2009}. One can simplistically imagine a scheme similar to the realization of occupation inversion in laser physics. The atom is excited by the pumping laser into a specific, higher energy level, which relaxes quickly into the $\ket{e}$-state of the model. The fact that the pumping comes in the final step from a higher level of the same atom causes the process to be local.
+
+The mathematical description has to prevent an exited atom from decaying through this system-bath interaction channel. This is achieved through the short interaction time, i.e. the continuous time limit, and the modeling of the bath as two level system. Choosing the initial ancilla state to be the excited one of the bath leads to the wanted pumping. The effective collision model Hamiltonian reads 
 \begin{align*}
     H_\text{pump}&=\xi\,\sum_{i=1}^N\,(\sigma_i^-c_i^\dagger+\sigma_i^+c_i)
 \end{align*}
-with separate field modes for each atom represented as $c$, $c^\dagger$. Collective dephasing is also implemented in an collision model form for this project. %But it needs a different field atom interaction, which I don't want to derive here. 
+with two level annihilation and excitation operators $c_i$, $c_i^\dagger$, which are separately connected to each atom. Collective dephasing is also implemented in a collision model form for this project. %But it needs a different field atom interaction, which I don't want to derive here. 
 Experimentally dephasing can be simulated through spin-dependent kick operations\cite{sun_quantum_2024}. The theoretical description takes the form % It can be introduced through a classical field, which has minima at the atomic positions, but has for all atoms the same values. Then the deviation of the atom from the position of the minimum can be described by a bosonic mode. The justification of a collision model approach has to be made by saying, the atom, if dislocated, relaxes back to the minimum in way shorter time scales than the ones the dynamics of the system is described at. How this relaxation is achieved, I don't know.
 \begin{align*}
     H_\text{Dp}&=\beta\,J_z\,(b^\dagger+b)\quad,
@@ -157,7 +162,8 @@ where $[\cdot,\cdot]_+$ is the anticommutation relation. The terms quadratic in 
 \end{align}
 Tracing out the baths at this point gives the density matrix of the system at the subsequent time step. 
 \begin{align*}
-    \rho_{n+1}=\rho_n\left((n+1)\,\Delta t\right)=\Trb{\chi_n\left((n+1)\,\Delta t\right)}
+    \rho_{n+1}=\rho_n\left((n+1)\,\Delta t\right)&=\Trb{\chi_n\left((n+1)\,\Delta t\right)}\\
+    \Delta\rho_n&=\rho_{n+1}-\rho_n
 \end{align*}
 Performing this operation to both sites of \eqref{eq:pre_lindblad} leads to the Lindblad equation for the density matrix of the system. In the following I will drop the subscript $n$. For better orientation I split the master equation into different segments.
 \begin{align*}
@@ -175,14 +181,15 @@ The part associated with collective spontaneous emission takes the form
     \text{for}\quad\eta_\text{SpE}&=\ket{\text{vac}}\mathrel{\substack{\,\\\,\\ \text{SpE}}}\bra{\text{vac}}
 \end{align*}
 From the start I excluded the vanishing terms $\Trb{(a^\dagger a^\dagger+a\,a+a^\dagger a)\cdot\eta}$. With the choice $\eta_\text{Dp}=\ket{\text{vac}}\mathrel{\substack{\,\\\,\\ \text{Dp}}}\bra{\text{vac}}$ and $\eta^\text{pump}_i=\ket{1}\mathrel{\substack{\text{pump}\\\,\\ i}}\bra{1}$ the terms for dephasing and pumping arise analogously
-\begin{align*}
+\begin{align}
     L_\text{Dp}%&= \beta^2\,J_z\rho J_z\, \Trb{b\,b^\dagger\eta_b}\,\Delta t-\beta^2\,\half\,[J_z^2,\rho]_+\,\Trb{[b\,b^\dagger,\eta_b]_+}\,\Delta t\\
     &=\gamma\,J_z\rho J_z-\half\,\gamma\,[J_z^2,\rho]_+\\
     % \eta_b&=\ket{\text{vac}}_b\bra{\text{vac}}\\
     L_\text{pump}%&= \xi^2\,\sum_i\sigma_i^-\rho \sigma_i^+\, \Trb{c_i^\dagger c_i\eta^c_i}\,\Delta t-\xi^2\,\half\,\sum_i\,[\sigma_i^-\sigma_i^+,\rho]_+\,\Trb{[c_i^\dagger c_i,\eta^c_i]_+}\,\Delta t\\
-    &=\frac{\Gamma}{4}\,\left(\sum_i\sigma_i^+\rho \sigma_i^--\half\,\sum_i\,[\sigma_i^-\sigma_i^+,\rho]_+\right)\\
+    &=\frac{\Gamma}{4}\,\left(\sum_i\sigma_i^+\rho \sigma_i^--\half\,\sum_i\,[\sigma_i^-\sigma_i^+,\rho]_+\right)\label{eq:pumping_Lindblad_op}
     % \eta^c_i&=\ket{1}^c_i\bra{1}
-\end{align*}
+\end{align}
+%In order to reach at expression \ref{eq:pumping_Lindblad_op} one has to respect a suitable excitation scheme, as discussed earlier. 
 In the limit of very short interaction times with each ancilla $\Delta t\rightarrow0$, the density matrix of the system approaches a continuous time propagation. The time evolution of the expectation value of an observable $O_S$ can thus be determined via 
 \begin{align}
     \dt \braket{O_S}=\Trs{O_S\,\dt\rho}&=\Trs{O_S\,(L_\text{drive}+L_\text{SpE}+L_\text{Dp}+L_\text{pump})}\notag\\
