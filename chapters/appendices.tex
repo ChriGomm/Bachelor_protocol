@@ -82,16 +82,16 @@
     \chapter{Appendix for zero detuning}
     \section{Decay without pumping}
     \label{appendix:msq_calc}
-    In this paragraph I want to discuss, why in the absence of pumping the system always decays to fully mixed state. But first I want to derive a statement, which can be applied to certain driven-dissipative models, as they often encounter a similar form of the derivative  for the squared of the total spin. For this purpose assume that the coupled set of $N$ ordinary differential equations has the solution $\vec{F}:\,\mathbb{R}\rightarrow\mathbb{R}^N$. Define from that the function squared $F^2:\,\mathbb{R}\rightarrow\mathbb{R}:\,t\mapsto\sum_{i=1}^NF_i^2(t)$. The statement is now, that if one is able to write the derivative of the squared function in the following way
+    In this paragraph I want to discuss, why in the absence of pumping the system always decays to the fully mixed state. But first I want to derive a statement, which can be applied to certain driven-dissipative models, as they often encounter a similar form of the derivative  for the squared of the total spin. For this purpose assume that the coupled set of $N$ ordinary differential equations has the solution $\vec{F}:\,\mathbb{R}\rightarrow\mathbb{R}^N$ for a given initial value. Define from that the function squared $F^2:\,\mathbb{R}\rightarrow\mathbb{R}:\,t\mapsto\sum_{i=1}^NF_i^2(t)$. The statement is now, that if one is able to write the derivative of the squared function in the following way
     \begin{align*}
         \half\,\dt F^2(t)&=\vec{F}^t(t)\,A\,\vec{F}(t)
     \end{align*}
-    with a Matrix $A$, which is positive ore negative definite, then the only stationary solution to the system of ODE is $\vec{F}\equiv\vec{0}$. Further limit cycles can not exist. \\
-    \textit{Proof}: The function $\vec{F}$, can be mapped via N-dimensional spherical coordinates into a different set of functions $f(t)$, $\varphi_j(t)$ $j\in\{1,\dots,N-1\}$, with $f$ the modulus of $F$, and $\varphi_j$ the angles. This is true for all solutions $\vec{F}\neq\vec{0}$. In the following I neglect this special case, as this is in the most cases anyway a stationary point and I am not interest in this part of the spin space. With the notation.
+    with a Matrix $A$, which is positive ore negative definite, then the only stationary solution to the system of ODE is $\vec{F}\equiv\vec{0}$. Further, limit cycles can not exist. \\
+    \textit{Proof}: The function $\vec{F}$, can be mapped via N-dimensional spherical coordinates into a different set of functions $f(t)$, $\varphi_j(t)$ $j\in\{1,\dots,N-1\}$, with $f$ the modulus of $F$, and $\varphi_j$ the angles. This is true for all solutions $\vec{F}\neq\vec{0}$. However, $\vec{F}=\vec{0}$ is a stationary solution as $F=0$ implies $\vec{F}=\vec{0}$. With the notation
     \begin{align*}
         \vec{F}(t)&=f(t)\,\hat{r}(t)
     \end{align*}
-    One can rewrite the differential equation for the squared function to
+    one can rewrite the differential equation for the squared function to
     \begin{align*}
         \half\,\dt F^2(t)=\half\,\dt f^2(t)=f(t)\,\dt f(t)&=f^2(t)\,\hat{r}^t\,A\,\hat{r}\\
         \Rightarrow\quad\dt f(t) = f(t)\,\hat{r}^t\,A\,\hat{r}
@@ -100,7 +100,7 @@
     \begin{align*}
         \lambda(t)\vcentcolon=\left| \hat{r}^t(t)\,A\,\hat{r}(t) \right| > \varepsilon
     \end{align*}
-    For all $t$ and all functions $\{\varphi_j(t)\}$. \textit{Proof}: if this does not hold, there will have to be a sequence $(t_n)$ with $\lambda(t_n)\rightarrow0$. As the surface of an N-dimensional sphere is a compact set, this sequence would have to converge on the survace of the sphere, which would infer $\exists \hat{r}\neq0$ with 
+    for all $t$ and all functions $\{\varphi_j(t)\}$, as the matrix multiplication is a continuous operation. \textit{Proof}: if this does not hold, there will have to be a sequence $(t_n)$ with $\lambda(t_n)\rightarrow0$. As the surface of an N-dimensional sphere is a compact set, this sequence would have to converge on the survace of the sphere, which would infer $\exists \hat{r}\neq0$ with 
     \begin{align*}
         \hat{r}^t(t)\,A\,\hat{r}(t)=0
     \end{align*}
@@ -111,7 +111,7 @@
         \text{or}\quad \dt f(t) <& -\varepsilon\,f(t)\\
         \Rightarrow\quad f(t) <& c\,e^{-\varepsilon\,t}\\
     \end{align*}
-    for suitable choice of $c$ (can be shown with mean value theorem). This implies, that there can't be a stationary solution of the set of ODE. The last statement holds, because for $t\rightarrow\infty$ either $f$ goes to zero, which would imply that all $F_i$ go to zero or $f$ grows boundlessly, which implies that, independent of the starting conditions, there exists a $F_i$, that grows boundlessly, which forbids the properties of a stationary state including limit cycles.\\\\Now in the case of the equations of motion in this work, the matrix $A$ is negative semi-definite in the absence of pumping. Nevertheless one can infer from the form of $A$ and the equations of motion that limit cycles can not exist and the only stationary state is $\vec{m}=0$. This can be seen by the following consideration. First revise the equations of motion for $\Gamma=0$
+    for suitable choice of $c$ (can be shown with mean value theorem). This implies, that there can't be a stationary solution of the set of ODE. The last statement holds, because for $t\rightarrow\infty$ either $f$ goes to zero, which would imply that all $F_i$ go to zero or $f$ grows boundlessly, which implies that, independent of the starting conditions, there exists a $F_i$, that grows boundlessly, which forbids the properties of a stationary state or limit cycle.\\\\Now for the equations of motion in this piece of work, the matrix $A$ is negative semi-definite in the absence of pumping. Nevertheless one can infer from the form of $A$ and the equations of motion that limit cycles can not exist and the only stationary state is $\vec{m}=0$. This can be seen by the following consideration. First revise the equations of motion for $\Gamma=0$
     \begin{align*}
         \dt m_x &= -\frac{\delta}{2}\,m_y-\half\,\gamma\,m_x+\kappa\,m_x m_z\\
         \dt m_y &= \frac{\delta}{2}\,m_x-\omega\,m_z-\half\,\gamma\,m_y+\kappa\,m_y m_z\\
