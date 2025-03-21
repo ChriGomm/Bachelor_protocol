@@ -84,9 +84,11 @@
 \renewcommand*{\sectionmarkformat}{}
 %printing => comment following commands
 % \clearpairofpagestyles
-\automark[section]{section}
+\automark[chapter]{section}
 \lehead[\headmark]{\headmark}
 \rohead[\headmark]{\headmark}
+% \lehead[chapter]{chapter}
+% \rohead[section]{section}
 % \cfoot*{\pagemark} %for PDF
 
 \usepackage[hang,flushmargin]{footmisc}  % left flushed footnotes
@@ -222,11 +224,51 @@
 \newcommand{\diff}{\text{d}}
 \begin{document}
 
-% \maketitlepage
+\maketitlepage
 % % \makebookcover
-% \setcounter{page}{1}
-% \pagenumbering{roman}
-% \makedeclarationoffidelity
+\setcounter{page}{1}
+\pagenumbering{roman}
+
+
+
+% \newpage\null\thispagestyle{empty}\newpage
+
+\makealllistofcontents
+\setcounter{page}{1}
+\pagenumbering{arabic}
+\cleardoubleemptypage
+%% main document  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\automark[section]{chapter}
+\lehead[\headmark]{\headmark}
+\rohead[\headmark]{\headmark}
+%\input{content/Deleted.tex}
+% \clearpage
+% \lehead[Introduction]{Introduction}
+% \rohead[Introdduction]{Introduction}
+\input{chapters/introduction.tex}
+% \newpage
+
+\input{chapters/theory.tex}
+% \clearpage
+\input{chapters/zero_detuning.tex}
+% \clearpage
+\input{chapters/detuned_case.tex}
+% \automark[section]{section}
+% \lehead[\headmark]{\headmark}
+% \rohead[\headmark]{\headmark}
+% \lehead[Conclusion]{Conclusion}
+% \rohead[Conclusion]{Conclusion}
+% \automark[chapter]{chapter}
+\input{chapters/conclusion.tex}
+
+
+\cleardoublepage
+\lehead[]{}
+\makedeclarationoffidelity
+\automark[section]{chapter}
+\lehead[\headmark]{\headmark}
+\rohead[\headmark]{\headmark}
 % {	
 % 	\thispagestyle{plain}
 
@@ -241,42 +283,10 @@
 % 	\end{center}
 % 	\clearpage
 % }
-% \makealllistofcontents
-% \setcounter{page}{1}
-% \pagenumbering{arabic}
-
-%% main document  
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\input{content/Deleted.tex}
-% \clearpage
-% \lehead[Introduction]{Introduction}
-% \rohead[Introdduction]{Introduction}
-% \input{chapters/introduction.tex}
-% \newpage
 % \automark[section]{section}
 % \lehead[\headmark]{\headmark}
 % \rohead[\headmark]{\headmark}
-% \input{chapters/theory.tex}
-% \clearpage
-% \input{chapters/zero_detuning.tex}
-% \clearpage
-% \input{chapters/detuned_case.tex}
-
-% \lehead[Conclusion]{Conclusion}
-% \rohead[Conclusion]{Conclusion}
-% \automark[chapter]{chapter}
-% \input{chapters/conclusion.tex}
-
-% \clearmainofpairofpagestyles
-% \clearplainofpairofpagestyles
-% \clearpairofpagestyles
-
-
-% \automark[section]{section}
-% \lehead[\headmark]{\headmark}
-% \rohead[\headmark]{\headmark}
-% \printbibliography
+\printbibliography
 \input{chapters/appendices.tex}
 % \clearpage
 

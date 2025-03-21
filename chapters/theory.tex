@@ -3,7 +3,7 @@
 \chapter{Theoretical framework}\label{ch:theory}
 \section{The model}
 %
-In this project I will examine a System of N 2-level atoms or spins, described in a collision model framework \cite{ciccarello_quantum_2022,gross_qubit_2018}. The system will be under the influence of several interaction types due to coupling to external baths. The interaction will exhibit laser driving (drive), collective spontaneous emission (SpE), collective dephasing (Dp) and local pumping (pump). The Hamiltonian $H$ describing the interplay of system and bath is set up in a collision model formalism, which I will introduce in the following.
+In this project I will examine a System of N 2-level atoms or spins, described in a collision model framework \cite{ciccarello_quantum_2022,gross_qubit_2018}. The system will be under the influence of several interaction types due to coupling to external baths. The interaction will exhibit laser driving (drive), collective spontaneous emission (SpE), collective dephasing (Dp) and local pumping (pump). The Hamiltonian $H$, describing the interplay of system and bath, is set up in a collision model formalism, which I will introduce in the following.
 % These effects are captured by the collision model Hamiltonian 
 \begin{align}
     H = H_\text{drive}+H_\text{SpE}+H_\text{Dp}+H_\text{pump}
@@ -20,7 +20,7 @@ Before discussing each interaction part, I will first derive the collision model
 \begin{align*}
     H= {\omega_0}\,\ket{e}\bra{e}+2\pi\,\int_{0}^\infty\diff\nu\,\nu\,a^\dagger_\nu a_\nu+ \hat{\boldsymbol{d}}\,\int_{0}^\infty\diff\nu\,\tilde{\alpha}(\nu)\,\boldsymbol{E_0}(\nu)\,(a_\nu+a^\dagger_\nu)
 \end{align*}
-Here $\ket{e}$ denotes the excited state of the atom. $\omega_0$ is the energy difference of the atomic transition. The energy of the ground state $\ket{g}$ is set to zero. The dipole operator of the transition is noted as $\hat{\mathbf{d}}$, whereas $\mathbf{E_0}(\nu)$ and $\tilde{\alpha}(\nu)$ are the generally written polarization with amplitude and the interaction strength of each mode. The annihilation and creation operators of the electromagnetic frequency modes are labeled by $a_\nu$, $a_\nu^\dagger$. By assuming that only a small number of modes actually contributes to the interaction, one can, without consequences, extend the integral to $-\infty$. One also assumes that the relevant frequency interval is sufficiently narrow that the coupling strength as well as the polarization and amplitude can be approximated as constant therein \cite{ciccarello_quantum_2022,gross_qubit_2018}. Thus it is possible to write the Hamiltonian as
+Here $\ket{e}$ denotes the excited state of the atom. $\omega_0$ is the energy difference of the atomic transition. The energy of the ground state $\ket{g}$ is set to zero. The dipole operator of the transition is noted as $\hat{\mathbf{d}}$, whereas $\mathbf{E_0}(\nu)$ and $\tilde{\alpha}(\nu)$ are the generally written polarization with amplitude and the interaction strength of each mode respectively. The annihilation and creation operators of the electromagnetic frequency modes are labeled by $a_\nu$, $a_\nu^\dagger$. By assuming that only a small number of modes actually contributes to the interaction, one can, without consequences, extend the integral to $-\infty$. One also assumes that the relevant frequency interval is sufficiently narrow that the coupling strength as well as the polarization and amplitude can be approximated as constant therein \cite{ciccarello_quantum_2022,gross_qubit_2018}. Thus it is possible to write the Hamiltonian as
 \begin{align*}
     H= {\omega_0}\,\ket{e}\bra{e}+2\pi\,\int_{-\infty}^\infty\diff\nu\,\nu\,a^\dagger_\nu a_\nu+ \tilde{\alpha}\,\boldsymbol{E_0}\,\hat{\boldsymbol{d}}\,\int_{-\infty}^\infty\diff\nu\,(a_\nu+a^\dagger_\nu)
 \end{align*}
@@ -36,7 +36,7 @@ Going to the interaction picture and neglecting counter rotating terms gives ris
 \begin{align*}
     H=\tilde{\alpha}'\,\int_{-\infty}^\infty\diff\nu\,(e^{-i\,(2\pi\nu-\omega_0)\, t}\sigma^+a_\nu+e^{i\,(2\pi\nu-\omega_0)\, t}\sigma^-a^\dagger_\nu)\quad,
 \end{align*}
-$\sigma^+=\ket{e}\bra{g}$ and $\sigma^-=(\sigma^+)^\dagger$ denote the spin ladder operators. This resembles the Jaynes-Cummings model in the interaction picture. The collision model comes into play, when one introduces combined field operators of the form
+$\sigma^+=\ket{e}\bra{g}$ and $\sigma^-=(\sigma^+)^\dagger$ denote the spin ladder operators. This resembles generalized Jaynes-Cummings model in the interaction picture. The collision model comes into play, when one introduces combined field operators of the form
 \begin{align*}
     a_t\vcentcolon=\int_{-\infty}^{\infty}\diff\nu\,e^{-i\,(2\pi\nu-\omega_0)\, t}a_\nu
 \end{align*}
@@ -59,7 +59,7 @@ After introducing time-bin modes
     a_n\vcentcolon&=\frac{1}{\sqrt{\Delta t}}\int_{t_0+(n-1)\,\Delta t}^{t_0+n\,\Delta t}\diff t\,a_t
 \end{align*}
 and redefining $\alpha=\tilde{\alpha}'/\sqrt{\Delta t}$ this can be written as
-\begin{align}
+\begin{align}\label{eq:approx_time_evolv}
     U_n &\approx 1-i\,H_n \,\Delta t-\half\,H_n^2\,\Delta t^2\notag\\
     \text{with}\quad H_n&=\alpha\,(\sigma_+a_n+\sigma_-a^\dagger_n)
 \end{align}
@@ -67,11 +67,11 @@ The evolution of the system factorizes into consecutive interactions described b
 \begin{itemize}
     \item ancillas do not interact with each other 
     \item ancillas are initially uncorrelated 
-    \item each ancilla collides with S only once 
+    \item each ancilla collides with the system only once 
 \end{itemize}
 Notice that those ideas are also related to the Born Markov approximations. The assumption of independent consecutive interactions leans on the assumption of a correlation time of the bath, which is much smaller than the one of the system. Note, that $[a_n,a^\dagger_{n'}]=\delta_{n,n'}$ holds, which strengthens the notion of independent modes.\\\\%, and therefore the modes of different $n$ do not depend on each other, which is important for being able to describe the system via a collision model with collisions with ancillas $n$.
 One has to take into account that for the system, which is considered in this project, local as well as collective interaction is chosen. This also has implications for the correlations between system and bath.
-In order for the spontaneous emission to be collective one has to realize a field that couples to all atoms at once. The temporal and spatial correlation of the field have to reach far enough such that the time between emissions as well as the distance between the atoms is smaller than correlation time and length. \\Local interaction with the field on the other hand demands that the interaction of one atom with the field has no influence on the interaction of another atom with the field. This demands sufficiently small spatial and temporal correlations. Hence the physical implementation of such a system requires experimental tact \cite{diehl_quantum_2008,shaw_multi-ensemble_2024}.\\\\% It is often realized in optical cavities \cite{shaw_multi-ensemble_2024}.\\\\%Hence with those two electromagnetic environments one has to find  a sweet spot of the coupling implementations, where both requirements for the different interactions can be satisfied, if one wants to implement a physical system of such character.\\\\
+In order for the spontaneous emission to be collective one has to realize a field that couples to all atoms at once. The temporal and spatial correlation of the field have to reach far enough such that the time between emissions as well as the distance between the atoms is smaller than correlation time and length. \\Local interaction with the bath on the other hand demands that the interaction of one atom with the bath has no influence on the interaction of another atom with the bath. This demands sufficiently small spatial and temporal correlations. Hence the physical implementation of such a system requires experimental tact \cite{diehl_quantum_2008,shaw_multi-ensemble_2024}.\\\\% It is often realized in optical cavities \cite{shaw_multi-ensemble_2024}.\\\\%Hence with those two electromagnetic environments one has to find  a sweet spot of the coupling implementations, where both requirements for the different interactions can be satisfied, if one wants to implement a physical system of such character.\\\\
 Having introduced the collision model approach I will now turn to the explanation of the different interaction types. Collective spontaneous emission results from a dipole interaction of the atom with an electromagnetic field. The property that determines the type of the effect is the state of the field, i.e. the state of the ancilla.\\
 For the description of emission one can choose the initial state of each ancilla as the vacuum state, as for sufficiently low emission rate, such an ancilla only triggers emissions. Following the above derivation the collective spontaneous emission can be build into the Hamiltonian with the following form.
 \begin{align*}
@@ -136,12 +136,12 @@ In summary system and baths are described by the full Hamiltonian
 \end{align}
 
 
-\section[Lindblad equation]{Derivation of the Lindblad equation}
-The master equation is derived by evolving the density matrices of system and ancillas during their interplay. Because of the assumed short time of interaction the previously derived propagation operator up to second order in the interaction time interval is used.
+\section{Derivation of the Lindblad equation}%[Lindblad equation]
+The master equation is derived by evolving the density matrices of system and ancillas during their interplay. Because of the assumed short time of interaction the previously derived propagation operator up to second order in the interaction time interval is used (\ref{eq:approx_time_evolv}).
 \begin{align}
     U_n &\approx 1-i\,H_n \,\Delta t-\half\,H_n^2\,\Delta t^2
 \end{align}
-The Hamiltonian $H_n$ is decomposed in a term that solely effects the System and one that describes the interaction with the baths.
+The Hamiltonian $H_n$ is decomposed in a term that solely effects the system and one that describes the interaction with the baths.
 \begin{align}\label{eq:Ham_split}
     H_n &= H_n^S + V_n\notag\\
     H_n^S&=\frac{\delta}{2}\,J_z+\omega\,J_x\notag\\
@@ -190,13 +190,13 @@ From the start I excluded the vanishing terms $\Trb{(a^\dagger a^\dagger+a\,a+a^
     % \eta^c_i&=\ket{1}^c_i\bra{1}
 \end{align}
 %In order to reach at expression \ref{eq:pumping_Lindblad_op} one has to respect a suitable excitation scheme, as discussed earlier. 
-In the limit of very short interaction times with each ancilla $\Delta t\rightarrow0$, the density matrix of the system approaches a continuous time propagation. The time evolution of the expectation value of an observable $O_S$ can thus be determined via 
+In the limit of very short interaction times with each ancilla $\Delta t\rightarrow0$, the density matrix dynamics of the system approach a continuous time propagation. The time evolution of the expectation value of an observable $O_S$ can thus be determined via 
 \begin{align}
     \dt \braket{O_S}=\Trs{O_S\,\dt\rho}&=\Trs{O_S\,(L_\text{drive}+L_\text{SpE}+L_\text{Dp}+L_\text{pump})}\notag\\
     &=\vcentcolon \mathcal{L}_\text{drive}(O_S)+\mathcal{L}_\text{SpE}(O_S)+\mathcal{L}_\text{Dp}(O_S)+\mathcal{L}_\text{pump}(O_S)
 \end{align}
 
-\section[mean field equations]{Equation of motion for the collective spin}
+\section{Equation of motion for the collective spin}%[mean field equations]
 Starting from the Lindblad equation one can derive the equations of motion for the collective spin of the system. I will again divide the derivation of the full dynamics into the contributions of the different couplings. The effect of the laser driving constitutes 
 \begin{align*}
     \mathcal{L}_\text{drive}(J_z)&=\omega\,\braket{J_y}\\

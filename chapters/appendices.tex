@@ -145,7 +145,7 @@
         \leq&\left( \half-\frac{\Omega^2}{K}\,\left( {y}^2- {y} \right) \right)^2+\frac{\Omega^2}{K^2}\,{y}^2\\
         &=\vcentcolon m^*
     \end{align*}
-    The last definition allows to continue the analysis with only two parameters $K$, $\Omega$. The real magnetic modulus squared is always smaller than $m^*$. In order to take into account the interdependence of $y$ and the parameters through the determining equation for $y$, I have to express them through each other. 
+    The last definition allows to continue the analysis with only two parameters $K$, $\Omega$. The actual magnetic modulus squared is always smaller than $m^*$. For the consideration of monotony, I consider the derivative of $m^*$. In order to take into account the interdependence of $y$ and the parameters through the determining equation for $y$, $F(y)$, I have to express them through each other. 
     \begin{align*}
         0&=F(y)=-\frac{K}{2\Omega^2}-\left( \frac{1-K}{2\Omega^2} +1\right)\,{y}-{y}^3+2\,{y}^2\\
         \Rightarrow\quad \frac{K}{2\Omega^2}\,({y}-1)&=(1+\frac{1}{2\Omega^2})\,{y}+{y}^3-2\,{y}^2\\
@@ -189,7 +189,7 @@
         &=-\frac{\frac{1}{2\Omega^2}\,({y}-1)}{2\,\left[(1+\frac{1}{2\Omega^2})\,{y}+{y}^3-2\,{y}^2\right]^3}\,\left( 2\,{y}^5-4\,{y}^4+2\,{y}^3 \right)\\
         &=-\frac{\frac{1}{2\Omega^2}\,({y}-1)}{2\,\left[(1+\frac{1}{2\Omega^2})+{y}^2-2\,{y}\right]^3}\,\left( 2\,{y}^2-4\,{y}+2 \right)
     \end{align*}
-    The quadratic polynomial in the denominater is always positive as it is positive for $y=0$ and has no roots.
+    The quadratic polynomial in the denominater is always positive because it is positive for $y=0$ and has no roots.
     \begin{align*}
         0&=(1+\frac{1}{2\Omega^2})+{y}^2-2\,{y}\\
         y_\text{roots}&=\half\,(2\pm\sqrt{4-4\,(1+\,\frac{1}{2\Omega^2})})\\
@@ -199,7 +199,7 @@
     \begin{align*}
         \frac{\partial m^*}{\partial{y}}&=-\frac{\frac{1}{2\Omega^2}\,({y}-1)^3}{\left[(1+\frac{1}{2\Omega^2})+{y}^2-2\,{y}\right]^3}
     \end{align*}
-    It can be inferred, that $\partial_{{y}}\,m^*>0$ for ${y}<1$ and $\partial_{{y}}\,m^*<0$ for ${y}>1$. As mentioned before these are the only two areas in which ${y}$ can fall. For $y$ smaller than zero $m^*$ takes it's maximum for ${y}\rightarrow0$ and for the area ${y}>1$ $m^*$ takes it's maximum for ${y}\rightarrow1$. Looking again at the form of $|m|^2$ 
+    It can be inferred for the relevant values for $y$, that $\partial_{{y}}\,m^*>0$ for ${y}<0$ and $\partial_{{y}}\,m^*<0$ for ${y}>1$. As mentioned before these are the only two areas in which ${y}$ can fall. For $y$ smaller than zero $m^*$ takes it's maximum for ${y}\rightarrow0$ and for the area ${y}>1$ $m^*$ takes it's maximum for ${y}\rightarrow1$. Looking again at the form of $|m|^2$ 
     \begin{align*}
         |m|^2\leq m^*=\left( \half-\frac{\Omega^2}{K}\,\left( {y}^2- {y} \right) \right)^2+\frac{\Omega^2}{K^2}\,{y}^2
     \end{align*}
@@ -227,18 +227,18 @@
     \begin{figure}[H]
         \hspace*{-0.4cm}
         \includegraphics{pictures/fixp_boundaries.pdf}
-        \caption{This graphic showes the range of $m_y$, $m_z$, $|m|$ for a parameter grid of $1.2\leq\kappa\leq24$ and $3\cdot10^{-7}\leq\omega\leq7$, $\Gamma=1$ $\gamma=0.2$. In the left column (a-d) the fixed points are shown in the $y-z$-plane, whereas in the right column (e-h) the modulus of the total angular momentum is depectid in dependence of $m_y$ for the different parameter values. The first row shows the fixed point in the parameter regime, where there is only one fixed point present. From the 2. row downwards the fixed points in the area of three stationary solutions are show in the order smallest, middle and largest $m_y$-value.}
+        \caption{This graphic showes the range of $m_y$, $m_z$, $|m|$ for a parameter grid of $1.2\leq\kappa\leq24$ and $3\cdot10^{-7}\leq\omega\leq7$, $\Gamma=1$ $\gamma=0.2$. In the left column (a-d) the fixed points are shown in the $y-z$-plane, whereas in the right column (e-h) the modulus of the total angular momentum is depectid in dependence of $m_y$ for the different parameter values. The first row shows the fixed point in the parameter regime, where there is only one fixed point present. From the 2. row downwards the fixed points in the area of three stationary solutions are show in the order smallest (b,f), middle (c,g) and largest (d,h) $m_y$-value.}
     \end{figure}
     
     
     
     \section{Linearization eigenvalues for the unstable fixed points in the case $\delta=0$}
     \label{appendix:eig_del0}
-    In this section of the appendix the eigenvalues of the linearization matrix for fixed points with middle and largest $y$-value are depicted. They show again their instability.
+    In this section of the appendix the eigenvalues of the linearization matrix for fixed points with middle and largest $y$-value are depicted. They show again their instability. In all diagrams the olive green color depicts the area where no stationary solutions of the considered type are found.
     \begin{figure}[H]
         \centering
         \includegraphics{pictures/lam_anal_m1.png}
-        \caption{Real and imaginary part of the two of the eigenvalues of the linearization for the middle-$y$ stationary solution.
+        \caption{Real and imaginary part of two of the eigenvalues of the linearization for the middle-$y$ stationary solution.
         }
     \end{figure}
     
@@ -268,30 +268,30 @@
     \begin{figure}[H]
         \centering
         \includegraphics{pictures/lc_traj_wcut3.png}
-        \caption{For $\omega=2.389$ possible long time states are shown for random values from the parameter grid. Where stationary points exist, I also drew the transition from the starting points to the stationary point.}
+        \caption{For $\omega=2.389$ possible long time states are shown for random values from the parameter grid.}
     \end{figure}
     
     \begin{figure}[H]
         \hspace*{-1cm}
         \includegraphics{pictures/lc_traj_kcut2.png}
-        \caption{For $\kappa=11.28$ possible long time states are shown for random values from the parameter grid. Where stationary points exist, I also drew the transition from the starting points to the stationary point.}
+        \caption{For $\kappa=11.28$ possible long time states are shown for random values from the parameter grid. Where stationary points exist, I also drew the transition from the starting points to the stationary point, to make them more visible.}
     \end{figure}
     
     \begin{figure}[H]
         \centering
         \includegraphics{pictures/lc_traj_dcut2.png}
-        \caption{For $\delta=-1.33$ possible long time states are shown for random values from the parameter grid. Where stationary points exist, I also drew the transition from the starting points to the stationary point.}
+        \caption{For $\delta=-1.33$ possible long time states are shown for random values from the parameter grid. Where stationary points exist, I also drew the transition from the starting points to the stationary point, to make them more visible.}
     \end{figure}\newpage
 
     \section{Long-time states for varying dephasing strength}\label{app:gamma_analysis}
     An examination of the long-time states for different $\gamma$-values, which has been omitted in the main text, is briefly carried out at this point. For this purpose I again plot the stationary points as well as the average over a period of a limit cycle for different parameter values.
     \begin{figure}[H]
         \centering
-        \caption{fixed points and averaged limit cycles over their period. In (a) $\gamma$ and $\delta$ are varied, while the other parameter a kept fixed. In (b) the cut with differing $\omega$ and $\delta$ is repeated for a different $\kappa$ and more importantly a different $\gamma$ value. $\Gamma=1$ as always. The white dashed line separates the region of limit cycles from that where stationary points exist. In both plots the area above the white line is the time crystal phase.}
+        \caption{fixed points and averaged limit cycles over their period. In (a) $\gamma$ and $\delta$ are varied, while the other parameters are kept fixed. In (b) the cut with differing $\omega$ and $\delta$ is repeated for a different $\kappa$ and more importantly a different $\gamma$ value. $\Gamma=1$ as always. The white dashed line separates the region of limit cycles from that where stationary points exist. In both plots the area above the white line is the time crystal phase.}
         \includegraphics{pictures/limit_cycle_mean_gw.png}
         \label{fig:gamma_longtime}
     \end{figure}
-    A several interesting observations can be made. Starting with \figref{fig:gamma_longtime}(b) one can see that the phase separation line has qualitatively the same shape as for $\gamma=0.2$. It again follows the property of synchronization effects that the larger the detuning between the considered systems is the larger the coupling between them has to be in order to see synchronization. I can also inform the reader that the parameter set that has been chosen in \figref{fig:gamma_longtime}  exhibits no multistability. For all configuration only one limit cycle or one stationary solution exists. \\
+    Several interesting observations can be made. Starting with \figref{fig:gamma_longtime}(b) one can see that the phase separation line has qualitatively the same shape as for $\gamma=0.2$. It again follows the property of synchronization effects that the larger the detuning between the considered systems is the larger the coupling between them has to be in order to see synchronization. I can also inform the reader that the parameter set that has been chosen in \figref{fig:gamma_longtime}  exhibits no multistability. For all configurations only one limit cycle or one stable stationary solution exists. \\
     What can be additionally observed is that the long-time states show a valley of small $m_x$ values, that lies near the phase separation line but does not coincide with it. \\\\
     Turning to \figref{fig:gamma_longtime}(a) one finds that the time crystal phase is stable for a wide range of dephasing strength for certain parameter constellations. What is also intriguing is that the higher $\gamma$ is the larger, in absolute value, the detuning has to be in order to observe a time crystal phase. The form of the phase separation line also suggests that there might be a maximal value of dephasing such that above that value no limit cycles can arise. But this definitively has to be yet verified, what could be an interesting subject of future analysis.
 
