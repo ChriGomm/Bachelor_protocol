@@ -183,7 +183,7 @@
 \newcommand{\secref}[1]{Section\,\ref{#1}}
 \newcommand{\chref}[1]{Chapter\,\ref{#1}}
 \renewcommand{\eqref}[1]{Eq.\,(\ref{#1})}
-\newcommand{\appref}[1]{Appendix\,(\ref{#1})}
+\newcommand{\appref}[1]{Appendix\;\ref{#1}}
 \newcommand{\anticomm}[2]{\left\{#1, #2\right\}}
 
 %% bibliography with biber
@@ -223,9 +223,11 @@
 \newcommand{\ty}{\tilde{y}}
 \newcommand{\diff}{\text{d}}
 \begin{document}
-
+% \makebookcover
+% \end{document}
 \maketitlepage
-% % \makebookcover
+
+% % 
 \setcounter{page}{1}
 \pagenumbering{roman}
 
@@ -252,7 +254,7 @@
 \input{chapters/theory.tex}
 % \clearpage
 \input{chapters/zero_detuning.tex}
-% \clearpage
+% % \clearpage
 \input{chapters/detuned_case.tex}
 % \automark[section]{section}
 % \lehead[\headmark]{\headmark}
@@ -264,11 +266,16 @@
 
 
 \cleardoublepage
-\lehead[]{}
+% \lehead[]{}
+% \newpage
 \makedeclarationoffidelity
-\automark[section]{chapter}
-\lehead[\headmark]{\headmark}
-\rohead[\headmark]{\headmark}
+% \automark[section]{chapter}
+% \lehead[\headmark]{\headmark}
+% \rohead[\headmark]{\headmark}
+
+
+
+
 % {	
 % 	\thispagestyle{plain}
 
@@ -288,10 +295,10 @@
 % \rohead[\headmark]{\headmark}
 \printbibliography
 \input{chapters/appendices.tex}
-% \clearpage
+\cleardoublepage
 
-%% additional material  
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% additional material  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % {
 % 	\thispagestyle{plain}
@@ -300,7 +307,7 @@
 % }
 
 % \input{chapters/appendices.tex}
-% \clearpage
+% % \clearpage
 
 % {
 % 	\thispagestyle{plain}
